@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title>{{ page.title }}</title>
+    <style type="text/css">
+        .img-nav {
+            padding: 0px;
+            margin: 0 auto;
+            display: block;
+            width: 250px;
+            height: 250px;
+            border: 1px solid rgb(219, 101, 101);
+            border-radius: 100%;
+            background: #fff;
+            background-size: 100%;
+        }
+    </style>	 
+  </head>
+
+  <body>
+    <div style="position: fixed; display: block;">
+        <img class="img-nav"src="/images/img-nav.jpg">
+    </div>
+	<div style="width: 800px; margin-left:300px;display: block;">
+	{{ content }}
+	</div>
+
+  </body>
+
+</html>
+
