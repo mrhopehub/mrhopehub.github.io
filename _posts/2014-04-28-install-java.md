@@ -80,11 +80,9 @@ Oracle JDK7本身并不存在于该PPA中，这是因为新的Java授权许可�
 该软件包提供安装Oracle Java JDK 7 (包括 Java JDK, JRE 和 the Java 浏览器插件)，如果你只需要安装Oracle JRE，请不要使用该PPA。
 运行下述命令，即可完成添加PPA、安装最新版本的Oracle Java 7（支持Ubuntu 12.04, 11.10, 11.04 and 10.04）:
  
-1
-2
-3    sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java7-installer	 
+1 sudo add-apt-repository ppa:webupd8team/java
+2 sudo apt-get update
+3 sudo apt-get install oracle-java7-installer	 
 安装完成之后，如果你想看看是否真的安装成功了，你只需运行下面的命令：
  
 1	java -version	 
@@ -93,9 +91,9 @@ java version "1.7.0_04" Java(TM) SE Runtime Environment (build 1.7.0_04-b20) Jav
 注：版本号中的”_04″部分可能会与你的不同，这是由于该PPA总是安装最新的Oracle Java 7版本。
 如果由于一些其它的原因，当前的Java版本不是1.7.0，你可以尝试运行下面的命令：
  
-1	sudo update-java-alternatives -s java-7-oracle	 
+2	sudo update-java-alternatives -s java-7-oracle	 
 卸载 Oracle Java 7
 如果你不再想使用Oracle Java (JDK) 7，想回归OpenJDK了，你只需卸载Oracle JDK7 Installer，这样OpenJDK就又变成当前使用的java了：
  
-1	sudo apt-get remove oracle-java7-installer	 
+3	sudo apt-get remove oracle-java7-installer	 
 </xmp>
