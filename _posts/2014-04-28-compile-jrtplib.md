@@ -6,7 +6,7 @@ title: "windows下编译jrtplib-3.9.1和jthread-1.3.1"
 ## windows下编译jrtplib-3.9.1和jthread-1.3.1
 <font color="blue">第一步，先下载三个必要的文件：</font>
 <blockquote>
-1. 下载 jrtplib-3.9.1：<br>[http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib](http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib)<br>
+1. 下载 jrtplib-3.9.1：<br> [http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib](http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jrtplib)<br>
 2. 下载 jthread-1.3.1:<br>[http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jthread](http://research.edm.uhasselt.be/~jori/page/index.php?n=CS.Jthread)<br>
 3. 下载cmake-2.8.8-win32-x86.exe程序：<br>[http://www.cmake.org/cmake/resources/software.html](http://www.cmake.org/cmake/resources/software.html)
 </blockquote>
