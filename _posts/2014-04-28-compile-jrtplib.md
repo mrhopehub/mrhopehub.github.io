@@ -16,7 +16,7 @@ title: "windows下编译jrtplib-3.9.1和jthread-1.3.1"
 第三步，生成jthread项目，</font><br>
 <blockquote>
 1. 把生成的 jthread_d.lib 拷贝到C:\Program Files\jthread\lib目录下。<br><br>
-2.把jthread-1.3.1\src下的jmutex.h和jthread.h以及jthread的Vs项目下的src\jthreadconfig.h<br>
+2. 把jthread-1.3.1\src下的jmutex.h和jthread.h以及jthread的Vs项目下的src\jthreadconfig.h<br>
 拷贝到jrtplib-3.9.1\src\jthread目录下
 </blockquote>
 <font color="blue">
