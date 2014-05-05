@@ -17,17 +17,20 @@ title: "linux类系统启动过程"
 * <font color="blue">OS设备</font><br>
 有了OS的设备，更多的是强调<font color="red">进程、线程，因为OS的内核只是协调进程、方便进程访问硬件的作用，所以系统的功能性代码是进程实现的。</font><br>
 问题是怎么创建一个进程呢？下面就比较一下UC/OS与linux。
-
+<blockquote>
 1. uc/os
+<blockquote>
 <xmp class="prettyprint linenums">
 INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U prio)
 </xmp>
+</blockquote>
 用户只需要实现void (*task)(void *pd)即可。<br><br>
 2. linux<br>
 常用的方式fork,需要注意的是新进程的代码如何实现呢？也就是if(!(pid=fork())){}中怎么实现呢？很明显两种方式:<br>
 <blockquote>
 1. 直接写代码或者调用其他函数，此种方式跟OSTaskCreate很相似，但是还会涉及到继承的问题。<br>
 2. 调用execv等函数，与第一种方式的区别是，execv由一个参数是文件路径，这就是文件系统的作用。
+</blockquote>
 </blockquote>
 
 * <font color="blue">总结一下：</font><br>
