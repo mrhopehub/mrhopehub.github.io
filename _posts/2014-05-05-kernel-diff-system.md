@@ -17,6 +17,7 @@ title: "linux类系统启动过程"
 * <font color="blue">OS设备</font><br>
 有了OS的设备，更多的是强调<font color="red">进程、线程，因为OS的内核只是协调进程、方便进程访问硬件的作用，所以系统的功能性代码是进程实现的。</font><br>
 问题是怎么创建一个进程呢？下面就比较一下UC/OS与linux。
+
 1. uc/os
 <xmp class="prettyprint linenums">
 INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U prio)
