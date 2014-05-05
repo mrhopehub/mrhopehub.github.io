@@ -30,5 +30,5 @@ Data cache must be off<br>
 Instruction cache may be either on or off<br>
 CPU register 0 must be 0<br>
 CPU register 1 must be the ARM Linux machine type<br>
-CPU register 2 must be the physical address of the parameter list<br>
+CPU register 2 must be the physical address of the parameter list<br><br>
 注意上面是进入内核镜像（arch/$(ARCH)/boot/head.S）时的要求，并不是vmlinux时的要求。
