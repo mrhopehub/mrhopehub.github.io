@@ -51,4 +51,4 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 <font color="red">需要注意的是新版本的linux内核只负责创建第一个init进程，之后的工作有init完成，比如涉及到运行级别、启动了相应的服务、然后显示shell或者x11登陆界面。</font>
 
 ### <font color="blue">关于android系统</font>
-android系统的SDK并不是linux上的libc库、glib库、qt库等等，而是更加封装的java接口，所以可以android强调的是中间部分。另一方面，android为了实现中间部分，不得不对linux内核进行修改，比如添加的drivers/staging/android/binder.c来实现Binder IPC来支撑android中间部分。具体的移植android参照[这里](http://community.arm.com/groups/android-community/blog/2013/09/18/from-zero-to-boot-porting-android-to-your-arm-platform)
+android系统的SDK并不是linux上的libc库、glib库、qt库等等，而是更加封装的java接口，所以android强调的是中间部分。另一方面，android为了实现中间部分，不得不对linux内核进行修改，比如添加的drivers/staging/android/binder.c来实现Binder IPC来支撑android中间部分。具体的移植android参照[这里](http://community.arm.com/groups/android-community/blog/2013/09/18/from-zero-to-boot-porting-android-to-your-arm-platform)
