@@ -34,6 +34,7 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 </blockquote>
 
 * <font color="blue">总结一下：</font><br>
+<blockquote>
 <font color="red">嵌入式系统功能的实现或以裸机代码实现，或以OS中多进程实现，而进程代码可直接代码实现可读取可执行文件。</font>这也就是为什么linux操作系统需要文件系统。另一方面，linux内核启动结束
 <xmp class="prettyprint linenums">
     run_init_process("/sbin/init");
@@ -42,6 +43,7 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 	run_init_process("/bin/sh");
 </xmp>
 完全可以去掉，直接fork然后在if段中实现相应的进程代码即可。
+</blockquote>
 
 ### <font color="blue">linux类系统启动过程</font>
 主要两步：<br>
