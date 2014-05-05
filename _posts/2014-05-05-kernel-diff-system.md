@@ -13,6 +13,7 @@ title: "linux类系统启动过程"
 
 * <font color="blue">无OS设备（或者说裸机设备）</font><br>
 顾名思义，指的是没有操作系统的嵌入式设备，更没有进程的概念。系统完全运行在一个main函数（使用C语言时），虽然可以把这个main函数的运行看做是一个进程，但其算不上一个真正的进程。
+
 * <font color="blue">OS设备</font><br>
 有了OS的设备，更多的是强调<font color="red">进程、线程，因为OS的内核只是协调进程、方便进程访问硬件的作用，所以系统的功能性代码是进程实现的。</font><br>
 问题是怎么创建一个进程呢？下面就比较一下UC/OS与linux。
@@ -30,7 +31,7 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 </blockquote>
 </blockqutoe>
 
-* <font color="blue">总结一下：</font><br>
+3. <font color="blue">总结一下：</font><br>
 <font color="red">嵌入式系统功能的实现或以裸机代码实现，或以OS中多进程实现，而进程代码可直接代码实现可读取可执行文件。</font>这也就是为什么linux操作系统需要文件系统。另一方面，linux内核启动结束
 <xmp class="prettyprint linenums">
     run_init_process("/sbin/init");
