@@ -24,9 +24,11 @@ title: "嵌入式bootloader注意点"
 ##### <font color="blue">CPU的初始化</font>
 
 * 其实对CPU的要求算不上初始化的部分，只是很多文章都提到了，控制权转给内核时寄存器的要求，所以这里说一下。<br><br>
-r0 - should be 0<br>
-r1 - unique architecture number<br>
-MMU - off<br>
-I-cache - on or off<br>
-D-cache – off<br><br>
+The CPU must be in SVC (supervisor) mode with both IRQ and FIQ interrupts disabled.<br>
+The MMU must be off, i.e. code running from physical RAM with no translated addressing.<br>
+Data cache must be off<br>
+Instruction cache may be either on or off<br>
+CPU register 0 must be 0<br>
+CPU register 1 must be the ARM Linux machine type<br>
+CPU register 2 must be the physical address of the parameter list<br>
 注意上面是进入内核镜像（arch/$(ARCH)/boot/head.S）时的要求，并不是vmlinux时的要求。
