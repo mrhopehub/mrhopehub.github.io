@@ -17,7 +17,6 @@ title: "linux类系统启动过程"
 * <font color="blue">OS设备</font><br>
 有了OS的设备，更多的是强调<font color="red">进程、线程，因为OS的内核只是协调进程、方便进程访问硬件的作用，所以系统的功能性代码是进程实现的。</font><br>
 问题是怎么创建一个进程呢？下面就比较一下UC/OS与linux。
-<blockquote>
 1. uc/os
 <xmp class="prettyprint linenums">
 INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U prio)
@@ -29,14 +28,13 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 1. 直接写代码或者调用其他函数，此种方式跟OSTaskCreate很相似，但是还会涉及到继承的问题。<br>
 2. 调用execv等函数，与第一种方式的区别是，execv由一个参数是文件路径，这就是文件系统的作用。
 </blockquote>
-</blockqutoe>
 
-3. <font color="blue">总结一下：</font><br>
+* <font color="blue">总结一下：</font><br>
 <font color="red">嵌入式系统功能的实现或以裸机代码实现，或以OS中多进程实现，而进程代码可直接代码实现可读取可执行文件。</font>这也就是为什么linux操作系统需要文件系统。另一方面，linux内核启动结束
 <xmp class="prettyprint linenums">
     run_init_process("/sbin/init");
     run_init_process("/etc/init");
-	run_init_process("/bin/init");
+    run_init_process("/bin/init");
 	run_init_process("/bin/sh");
 </xmp>
 完全可以去掉，直接fork然后在if段中实现相应的进程代码即可。
@@ -49,4 +47,4 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 <font color="red">需要注意的是新版本的linux内核只负责创建第一个init进程，之后的工作有init完成，比如涉及到运行级别、启动了相应的服务、然后显示shell或者x11登陆界面。</font>
 
 ##### <font color="blue">关于android系统</font>
-android系统的SDK并不是linux上的libc库、glib库、qt库等等，而是更加封装的java接口，所以可以android强调的是中间部分。另一方面，android为了实现中间部分，不得不对linux内核进行修改，比如添加的drivers/staging/android/binder.c来实现Binder IPC来支撑android中间部分。具体的移植android参照<a herf="http://community.arm.com/groups/android-community/blog/2013/09/18/from-zero-to-boot-porting-android-to-your-arm-platform">http://community.arm.com/groups/android-community/blog/2013/09/18/from-zero-to-boot-porting-android-to-your-arm-platform</a>
+android系统的SDK并不是linux上的libc库、glib库、qt库等等，而是更加封装的java接口，所以可以android强调的是中间部分。另一方面，android为了实现中间部分，不得不对linux内核进行修改，比如添加的drivers/staging/android/binder.c来实现Binder IPC来支撑android中间部分。具体的移植android参照<a herf="http://community.arm.com/groups/android-community/blog/2013/09/18/from-zero-to-boot-porting-android-to-your-arm-platform">这里</a>
