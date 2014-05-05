@@ -19,7 +19,7 @@ title: "linux类系统启动过程"
 <blockquote>
 1. uc/os
 <xmp class="prettyprint linenums">
-INT8U  OSTaskCreate (void (*task)(void *pd),void *pdata,OS_STK *ptos,INT8U prio)
+INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U prio)
 </xmp>
 用户只需要实现void (*task)(void *pd)即可。<br><br>
 2. linux<br>
