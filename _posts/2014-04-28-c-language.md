@@ -6,7 +6,7 @@ title: "理解C中的声明"
 # 理解C中的声明
 A    <font color="red">从声明中找出","，</font>如果存在","，则说明涉及到函数，因为只有函数的声明中存在","（当然了，除了像char a,b,c;这样的声明情况）；<br>
 B    假如有","的话，","两边的是函数参数。<br>
-C    <font color="red">找出非关键字</font><br>
+### C    <font color="red">找出非关键字,从这里开始分析。</font><br>
 D    优先级从高到低
 <blockquote>
     	D1	声明中被括号括起来的那部分<br>
