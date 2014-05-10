@@ -11,6 +11,7 @@ title: "linux内核同步"
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 为了解决多个不同的SPI设备共享SPI控制器而带来的访问冲突，spi_bitbang使用内核提供的工作队列(workqueue)。workqueue是Linux内核中定义的一种回调处理方式。采用这种方式需要传输数据时，不直接完成数据的传输，而是将要传输的工作分装成相应的消息(spi_message)，发送给对应的workqueue，由与workqueue关联的内核守护线程(daemon)负责具体的执行。由于workqueue会将收到的消息按时间先后顺序排列，这样就是对设备的访问严格串行化，解决了冲突。
 </xmp>
+</font><font size="5" color="blue">分析到进程，也就差不多了。</font>
 ### <font color="blue">共享数据的同步</font>
 操作系统通常讲到的同步多指共享数据的同步，其<font color="red">归根结底是由共享数据的多处访问造成的，临界区：就是访问和操作共享数据的代码段。</font><font size="5" color="blue">注意临界区强调的是共享数据，而不是代码。</font>
 ### <font color="blue">编程时需要注意的</font>
