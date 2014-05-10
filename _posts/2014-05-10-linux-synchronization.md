@@ -7,7 +7,7 @@ title: "linux内核同步"
 ### <font color="blue">I/O端口的互斥访问</font>
 主要使用struct resource *request_region(unsigned long first, unsigned long n, const char *name)之类的函数保证了，内核中只有申请到该资源的驱动访问该IO。否则内核<font color="red">多处访问同一处IO</font>会造成不确定性。
 ### <font color="blue">驱动的串行化</font>
-在I/O端口的互斥行满足之后，如果内核中多处<font color="red">同时调用驱动函数</font>，相当于内核多处访问同一处IO。所以要保证调用驱动函数的<font color="red">串行化。</font>例如：
+在I/O端口的互斥行满足之后，如果内核中多处<font color="red">同时调用驱动函数或者多个进程同时访问某个设备文件</font>就相当于内核多处访问同一处IO。所以要保证调用驱动函数的<font color="red">串行化。</font>例如：
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 为了解决多个不同的SPI设备共享SPI控制器而带来的访问冲突，spi_bitbang使用内核提供的工作队列(workqueue)。workqueue是Linux内核中定义的一种回调处理方式。采用这种方式需要传输数据时，不直接完成数据的传输，而是将要传输的工作分装成相应的消息(spi_message)，发送给对应的workqueue，由与workqueue关联的内核守护线程(daemon)负责具体的执行。由于workqueue会将收到的消息按时间先后顺序排列，这样就是对设备的访问严格串行化，解决了冲突。
 </xmp>
