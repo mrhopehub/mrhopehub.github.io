@@ -71,6 +71,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 </xmp>
 注意：
 
+<xmp style="white-space: pre-wrap; word-wrap: break-word;">
 1. int nRows = I.rows * channels;<br>
 两点：<br>
 1.I.rows整体上把图像看做是一个二维的，其基本元素是像素，而I.rows * channels也是二维的角度，只不过其基本元素是每个像素的基本RGB分量。<br><br>
@@ -79,6 +80,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 如果isContinuous()为真，其实可以把图像看做是一维数组，所以另nRows = 1;而nCols *= nRows;
 3. 关于 I.ptr<uchar>(i)
 把图像看做是二维数组，切最基本的元素是RGB分量。所以I.ptr<uchar>（i）返回的是第i行的指针（注意并不是图像上第i行的指针）。是否有I.ptr<Vec3b>(i)呢？？
+</xmp>
 
 <font color="blue">第二种方法：</font>
 <xmp class="prettyprint linenums">
@@ -112,4 +114,6 @@ Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
     return I; 
 }
 </xmp>
+<xmp style="white-space: pre-wrap; word-wrap: break-word;">
 说到Iterator就要注意基本单位，所以如果I.channels()为1，最基本的单位就是char，所以用MatIterator_<uchar>类型，如果I.channels()为3，最基本的单位是三分量的像素，所以用MatIterator_<Vec3b>类型。
+</xmp>
