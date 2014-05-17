@@ -14,7 +14,7 @@ title: "编程最基本的问题之数据访问"
 4. A.copyTo(G);
 5. Mat M(2,2, CV_8UC3);
 6. Mat M(2,2, CV_8UC3, Scalar(0,0,255));
-7. int sz[3] = {2,3,4};Mat L(3,sz, CV_8UC(1), Scalar::all(0));
+7. int sz[3] = {2,3,4};Mat L(3,sz, CV_8UC(3), Scalar::all(0));
 8. Mat C = (Mat_<double>(3,3) << 0, -1, 0, -1, 5, -1, 0, -1, 0);
 9. IplImage* img = cvLoadImage("greatwave.png", 1);Mat mtx(img); // convert IplImage* -> Mat
 
@@ -27,7 +27,7 @@ title: "编程最基本的问题之数据访问"
 5. <font color="red">把mat看做一个二维数组，需要注意数组每个元素的类型定义：<br>
 CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]</font>
 6. 同上，只是对数组中每个元素初始化值
-7. 比较不常用的方式，第一个实参3代表维度，第二个实参代表每个维度尺寸的数组，第三个实参Scalar::all(0)代表给每一个元素初始化，其实就是定义了一个3维（2\*3\*4）的mat
+7. 比较不常用的方式，第一个实参3代表维度，第二个实参代表每个维度尺寸的数组，第三个实参Scalar::all(0)代表给每一个元素初始化，其实就是定义了一个3维（2\*3\*4）的mat并且每个元素是CV_8UC(3)类型
 8. 小矩阵逗号分隔初始化函数
 9. <font color="red">为已存在IplImage指针创建信息头,或者说IplImage*转换为Mat，很正规的构造函数了</font>
 
