@@ -77,7 +77,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 2.可以看看上图似乎nCols = I.cols * channels;更合适，这里就需要注意一下了,一方面opencv这样存储，另一方面用数据表示数据的时候，尽量把数据拆分成行更常用，而不是拆分成列，比如把二维数组看成是一行一行的（由一维数组组成）。
 2. if (I.isContinuous())<br>
 如果isContinuous()为真，其实可以把图像看做是一维数组，所以另nRows = 1;而nCols *= nRows;
-3. 关于 <xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<uchar>(i)</xmp>
+3. <xmp style="white-space: pre-wrap; word-wrap: break-word;">关于I.ptr<uchar>(i)</xmp>
 把图像看做是二维数组，切最基本的元素是RGB分量。所以<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<uchar>(i)</xmp>返回的是第i行的指针（注意并不是图像上第i行的指针）。是否有<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<Vec3b>(i)</xmp>呢？？
 
 <font color="blue">第二种方法：</font>
