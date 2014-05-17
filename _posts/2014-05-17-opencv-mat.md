@@ -4,9 +4,9 @@ title: "编程最基本的问题之数据访问"
 ---
 
 # 编程最基本的问题之数据访问
-### <font color="blue">背景</font>
+## <font color="blue">背景</font>
 最开始学习opencv的时候没太注意对基本的图像容器Mat，直到后来每次涉及到最基本的问题时总要没有思路的回过头来看，比如最简单的定义一个图像、访问图像的某个像素，所以这里稍微总结一下。
-### <font color="blue">Mat定义</font>
+## <font color="blue">Mat定义</font>
 
 1. Mat A=imread(argv[1], CV_LOAD_IMAGE_COLOR);
 2. Mat D (A, Rect(10, 10, 100, 100) ); // using a rectangle
@@ -31,7 +31,7 @@ CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel n
 8. 小矩阵逗号分隔初始化函数
 9. <font color="red">为已存在IplImage指针创建信息头,或者说IplImage*转换为Mat，很正规的构造函数了</font>
 
-### <font color="blue">Mat像素的访问</font>
+## <font color="blue">Mat像素的访问</font>
 图像矩阵的大小取决于我们所用的颜色模型，确切地说，取决于所用通道数。如果是灰度图像，矩阵就会像这样：
 ![img](/images/opencv/灰度mat.png)<br>
 而对多通道图像来说，矩阵中的列会包含多个子列，其子列个数与通道数相等。例如，RGB颜色模型的矩阵：
