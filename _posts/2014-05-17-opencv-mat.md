@@ -112,4 +112,4 @@ Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
     return I; 
 }
 </xmp>
-说到Iterator就要注意基本单位，所以如果I.channels()为1，最基本的单位就是char，所以用<xmp style="white-space: pre-wrap; word-wrap: break-word;">MatIterator_<uchar></xmp>类型，如果I.channels()为3，最基本的单位是三分量的像素，所以用<xmp style="white-space: pre-wrap; word-wrap: break-word;">MatIterator_<Vec3b></xmp>类型。
+说到Iterator就要注意基本单位，所以如果I.channels()为1，最基本的单位就是char，所以用<pre>MatIterator_<uchar></pre>类型，如果I.channels()为3，最基本的单位是三分量的像素，所以用<pre>MatIterator_<Vec3b></pre>类型。
