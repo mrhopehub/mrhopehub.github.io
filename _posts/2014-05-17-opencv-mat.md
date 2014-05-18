@@ -78,7 +78,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 2. if (I.isContinuous())<br>
 如果isContinuous()为真，其实可以把图像看做是一维数组，所以另nRows = 1;而nCols *= nRows;
 3. <xmp style="white-space: pre-wrap; word-wrap: break-word;">关于I.ptr<uchar>(i)</xmp>
-把图像看做是二维数组，切最基本的元素是RGB分量。所以<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<uchar>(i)</xmp>返回的是第i行的指针（注意并不是图像上第i行的指针）。是否有<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<Vec3b>(i)</xmp>呢？？
+把图像看做是二维数组，且最基本的元素是RGB分量。所以<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<uchar>(i)</xmp>返回的是第i行的指针（注意并不是图像上第i行的指针）。是否有<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<Vec3b>(i)</xmp>呢？？
 
 <font color="blue">第二种方法：</font>
 <xmp class="prettyprint linenums">
