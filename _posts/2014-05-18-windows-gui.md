@@ -2,7 +2,7 @@
 layout: posts
 title: "基于消息的GUI构架"
 ---
-
+转载：![http://www.cnblogs.com/lwzz/archive/2012/11/17/2754011.html](http://www.cnblogs.com/lwzz/archive/2012/11/17/2754011.html)
 # 基于消息的GUI构架
 在过去的日子中，大部分编程语言平台的GUI构架几乎没有发生变化。虽然在细节上存在一些差异，比如在功能和编程风格上，但大部分都是采用了相同的构架来响应用户输入以及重新绘制屏幕。这种构架可以被总结为“单线程且基于消息”。
 <xmp class="prettyprint linenums">
