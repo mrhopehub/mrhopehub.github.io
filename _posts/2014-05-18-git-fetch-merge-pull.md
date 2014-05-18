@@ -16,8 +16,8 @@ title: "Git 少用 Pull 多用 Fetch 和 Merge"
 <p> <strong>分支(Branches)</strong> </p> 
 <p> 在说<em>git pull</em><span>之前，我们需要先澄清分支的概念（branches）。很多人像写代码似的用一行话来描述分支是什么，例如:</span> </p> 
 <ul> 
- <li> <span>准确而言，分支的概念不是一条线，而类似于开发中的有向无环图</span> </li> 
- <li> <span>分支类似于一个重量级的大对象集合。</span> </li> 
+ <li> <span><font color="red">准确而言，分支的概念不是一条线，而类似于开发中的有向无环图</font></span> </li> 
+ <li> <span><font color="red">分支类似于一个重量级的大对象集合。</font></span> </li> 
 </ul> 
 <p> 我认为你应该这样来理解分支的概念：它是用来标记特定的代码提交，每一个分支通过SHA1sum值来标识，所以对分支进行的操作是轻量级的--你改变的仅仅是SHA1sum值。 </p>
 <p> 这个定义或许会有意想不到的影响。比如，假设你有两个分支，“stable” 和 “new-idea”, 它们的顶端在版本 E 和 F: </p> 
@@ -68,11 +68,11 @@ title: "Git 少用 Pull 多用 Fetch 和 Merge"
 <p> 这是个看起来我最终做了很多的事情。 </p>
 <p> <strong>分支类型</strong> </p> 
 <p> 分支这个术语不太容易理解,而且在git的开发过程中发生了很多变化。但简单来说git的分支只有两种： </p> 
-<p> a）“本地分支(local branches)” ，当你输入“git branch”时显示的。例如下面这个小例子： </p> 
+<p> a）<font color="red">“本地分支(local branches)” ，</font>当你输入“git branch”时显示的。例如下面这个小例子： </p> 
 <pre>       $ git branch
          debian
          server
-       * master</pre> b)“远程跟踪分支(Remote-tracking branches)” ，当你输入“git branch -r”是显示的，如: 
+       * master</pre> b)<font color="red">“远程跟踪分支(Remote-tracking branches)” ，</font>当你输入“git branch -r”是显示的，如: 
 <p> <br /> </p> 
 <pre>       $ git branch -r
        cognac/master
