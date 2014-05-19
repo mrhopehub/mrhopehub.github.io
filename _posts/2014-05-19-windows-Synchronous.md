@@ -4,7 +4,7 @@ title: "windows下多线程同步、互斥"
 ---
 小结：[http://blog.csdn.net/column/details/killthreadseries.html](http://blog.csdn.net/column/details/killthreadseries.html)
 # windows下多线程同步、互斥
-主要四中技术——关键段CS、互斥量Mutex、事件Event、信号量Semaphore
+主要四种技术——关键段CS、互斥量Mutex、事件Event、信号量Semaphore
 ## 同步还是互斥
 
 1. 关键段CS、互斥量Mutex都是实现互斥的，类似临界区。
