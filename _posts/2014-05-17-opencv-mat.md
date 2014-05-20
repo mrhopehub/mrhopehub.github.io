@@ -112,4 +112,4 @@ Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
     return I; 
 }
 </xmp>
-说到Iterator就要注意基本单位，所以如果I.channels()为1，最基本的单位就是char，所以用![img](/images/opencv/MatIterator_uchar.jpg)类型，如果I.channels()为3，最基本的单位是三分量的像素，所以用![img](/images/opencv/MatIterator_Vec3b.jpg)类型。<font color="red">而C++中Iterator的定义是![img](/images/opencv/c++it.jpg)(角度：某个类的Iterator,在java里更直接，list l = new ArrayList();Iterator iter = l.iterator();)，但通过Iterator访问数据的方式都类似指针。</font><font size="6">迭代器近似指针。</font>
+说到Iterator就要注意基本单位，所以如果I.channels()为1，最基本的单位就是char，所以用![img](/images/opencv/MatIterator_uchar.jpg)类型，如果I.channels()为3，最基本的单位是三分量的像素，所以用![img](/images/opencv/MatIterator_Vec3b.jpg)类型。<font color="red">而C++中Iterator的定义是![img](/images/opencv/c++it.jpg)(角度：某个类的Iterator。在java里更直接，list l = new ArrayList();Iterator iter = l.iterator();)，但通过Iterator访问数据的方式都类似指针。</font><font size="6">迭代器近似指针。</font>
