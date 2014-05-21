@@ -77,7 +77,7 @@ int main(void)
 
 	printf("patest_read_write_wire.c\n"); fflush(stdout);
 
-	//每次阻塞读写缓冲所占字节数=缓冲的帧数*声道数*量化大小
+	//每次阻塞读写缓冲区所占字节数=缓冲的帧数*声道数*量化大小
 	numBytes = FRAMES_PER_BUFFER * NUM_CHANNELS * SAMPLE_SIZE ;
 	sampleBlock = (char *) malloc( numBytes );					//开辟缓冲区
 	if( sampleBlock == NULL )
