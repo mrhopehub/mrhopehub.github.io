@@ -420,7 +420,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 </xmp>
 
-1. 基于面向对象的思想，把windows窗体看做一个对象，MFC里也是这么做的，<font color="red">换一下角度说windows窗体是由对象（的方法）绘制的更合适。</font>
+1. 基于面向对象的思想，把windows窗体看做一个对象，MFC里也是这么做的，<font color="red">换一下角度说windows窗体是由对象（的方法）绘制的更合适。</font><font color="blue" size="6">这个角度跟linux下的X协议非常类似。</font>
 2. 怎么看待父子窗口的问题，归根结底按钮等之类也是窗口，也有窗口处理过程，而且线程的消息泵中的消息不都是父窗口的也有子窗口的，只不过子窗口的处理过程函数还会再给父窗口发送消息（<font color="red">使用这种方法，子窗口就编程父窗口高一级的输入设备</font>），所以在CreateWindow要传递父窗口句柄（创建子窗口的时候，程序的主窗口看做顶层窗口）。<font color="red">在java swing则是调用所在容器的add方法，另外swing的事件处理并不想windows那样的子向父发送消息，而是调用子窗口的addActionListener来添加相应的处理函数（观察者模式）。</font>另外MFC进一步封装成找不到创建子窗口。具体参考[走出MFC窗口子类化的迷宫](http://sabolasi.iteye.com/blog/1254148)
 3. 注意一下checker3.c中主窗口过程的WM_SIZE和btnlook.c中的WM_SIZE
 4. 编写窗口程序时，尽量把操作看到类的操作（如添加消息映射时要看做是修改相应的类。在程序中操作窗口界面，看做窗口对应类的方法或者调用窗口对应类的方法）。
