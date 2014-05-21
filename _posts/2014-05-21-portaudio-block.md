@@ -105,7 +105,7 @@ int main(void)
 	printf( "Output HL: %g s\n", Pa_GetDeviceInfo( outputParameters.device )->defaultHighOutputLatency );
 	outputParameters.channelCount = NUM_CHANNELS;
 	outputParameters.sampleFormat = PA_SAMPLE_TYPE;
-	outputParameters.suggestedLatency = Pa_GetDeviceInfo( outputParameters.device )->defaultHighOutputLatency;
+	outputParameters.suggestedLatency = Pa_GetDeviceInfo( outputParameters.device)->defaultHighOutputLatency;
 	outputParameters.hostApiSpecificStreamInfo = NULL;
 
 	/* -- setup -- */
