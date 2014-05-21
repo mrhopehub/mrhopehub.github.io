@@ -14,7 +14,7 @@ PortAudio源码包中例子paex_read_write_wire.c的注释。代码：
 
 /* #define SAMPLE_RATE  (17932) // Test failure to open with this value. */
 #define SAMPLE_RATE  (44100)    //采样率，每秒采样的次数，采样一次的数据称为一帧
-#define FRAMES_PER_BUFFER (1024)//每次阻塞读写缓冲的帧数
+#define FRAMES_PER_BUFFER (1024)//每次阻塞读写需要缓冲的帧数
 #define NUM_CHANNELS    (2)		//单声道or双声道
 #define NUM_SECONDS     (15)	//
 /* #define DITHER_FLAG     (paDitherOff)  */
