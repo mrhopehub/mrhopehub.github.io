@@ -116,7 +116,7 @@ title: "Git 少用 Pull 多用 Fetch 和 Merge"
 <blockquote>
   有一些术语上的说法容易混淆需要注意一下：“track”在当作参数&quot;-track&quot;使用时，意思指通过本地分支对应一个远程跟踪分支。在远程跟踪分支中则指远程代码仓库中的跟踪分支。有点绕口。。。 
 </blockquote> 下面我们来看一个例子，如何从远程分支中更新本地代码，以及如何把本地分支推送到一个新的远程仓库中。
-<h3> <strong>从远端仓库进行更新</strong> </h3> 
+<h3> <strong><font color="red">从远端仓库进行更新(从一个仓库到另一个仓库，但更新的是分支，例如从远端仓库的分支fetch本地仓库的远程跟踪分支)</font></strong> </h3> 
 <p> 如果我想从远端的源仓库更新到本地的代码仓库，可以输入“<em>git fetch origin</em>”的命令，该命令的输入类似如下格式： </p> 
 <pre>  remote: Counting objects: 382, done.
   remote: Compressing objects: 100% (203/203), done.
@@ -154,7 +154,7 @@ title: "Git 少用 Pull 多用 Fetch 和 Merge"
  <br /> 在实际应用中，保持名称相同可以减少混淆，因此“本地名称和远程名称”作为“refspec”参数，我们不会进行更多的讨论。 
 </blockquote> 
 <p> <span style="text-decoration:line-through;"><em><u>git push</u></em></span><u>的操作不会牵扯远程跟踪分支（</u><span style="text-decoration:line-through;"><u>origin/experimental</u></span><u>）</u><u>，只有在你</u><u>下次进行git fetch时才会被更新。</u> </p> 
-<p> 上面这个说法不对，根据<em>Deskin Miller</em>的评论纠正：当推送到对应的远程分支后，你的远程跟踪分支就会被更新。 </p>
+<p> 上面这个说法不对，根据<em>Deskin Miller</em>的评论纠正：<font color="red">当推送到对应的远程分支后，你的远程跟踪分支就会被更新。</font> </p>
 <h3> <em></em>为什么不用 git 的 pull？ </h3> 
 <p> 虽然 <em>git pull</em> 大部分时候是好的，特别是如果你用CVS类型的方式使用Git时，它可能正适合你。然而，如果你想用一个更地道的方式（建立很多主题分支，当你需要时随时改写本地历史，等等）使用Git，那么习惯把 <em>git fetch</em> 和 <em>git merge</em> 分开做会有很大帮助。 </p>
 </div>
