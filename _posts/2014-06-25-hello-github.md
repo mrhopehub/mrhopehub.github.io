@@ -9,6 +9,7 @@ title: "一次很不愉快的GITHUB经历"
 1. 下载PortableGit-1.9.0-preview20140217.7z
 2. 解压到C盘根目录
 3. 添加环境变量
+
 <blockqutoe>
 1. 新建系统变量env_git<br><font color="red">使用变量名：GIT_DIR将导致所有的git命令的目录在C:\PortableGit-1.9.0-preview20140217，一直提示“fatal: Not a git repository: 'C:\PortableGit-1.9.0-preview20140217'”</font>
 2. path中添加%env_git%\cmd
