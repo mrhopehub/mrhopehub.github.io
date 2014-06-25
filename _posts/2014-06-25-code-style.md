@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "编码语法示例"
+title: "编码风格示例"
 ---
 
 <xmp class="prettyprint linenums">
