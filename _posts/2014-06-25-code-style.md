@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "eclipse 常用"
+title: "编码语法示例"
 ---
 
 <xmp class="prettyprint linenums">
