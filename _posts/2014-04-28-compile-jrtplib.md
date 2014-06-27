@@ -13,7 +13,7 @@ title: "windows下编译jrtplib-3.9.1和jthread-1.3.1"
 <font color="blue">
 第二步,在windows中安装好cmake，并生成 jrtplib 和 jthread 的VS2008的项目文件</font><br><br>
 <font color="blue">
-第三步，生成jthread项目，</font><br>
+第三步，生成jthread项目</font><br>
 <blockquote>
 1. 把生成的 jthread_d.lib 拷贝到C:\Program Files\jthread\lib目录下。<br><br>
 2. 把jthread-1.3.1\src下的jmutex.h和jthread.h以及jthread的Vs项目下的src\jthreadconfig.h<br>
