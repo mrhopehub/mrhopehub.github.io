@@ -1,7 +1,7 @@
-/* Tomorrow Night Bright Theme */
+/* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-  background: black;
+  background: #2d2d2d;
   font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
   font-size: 12px;
   line-height: 1.5;
@@ -10,64 +10,64 @@
 }
 
 .pln {
-  color: #eaeaea;
+  color: #cccccc;
 }
 
 @media screen {
   .str {
-    color: #b9ca4a;
+    color: #99cc99;
   }
 
   .kwd {
-    color: #c397d8;
+    color: #cc99cc;
   }
 
   .com {
-    color: #969896;
+    color: #999999;
   }
 
   .typ {
-    color: #7aa6da;
+    color: #6699cc;
   }
 
   .lit {
-    color: #e78c45;
+    color: #f99157;
   }
 
   .pun {
-    color: #eaeaea;
+    color: #cccccc;
   }
 
   .opn {
-    color: #eaeaea;
+    color: #cccccc;
   }
 
   .clo {
-    color: #eaeaea;
+    color: #cccccc;
   }
 
   .tag {
-    color: #d54e53;
+    color: #f2777a;
   }
 
   .atn {
-    color: #e78c45;
+    color: #f99157;
   }
 
   .atv {
-    color: #70c0b1;
+    color: #66cccc;
   }
 
   .dec {
-    color: #e78c45;
+    color: #f99157;
   }
 
   .var {
-    color: #d54e53;
+    color: #f2777a;
   }
 
   .fun {
-    color: #7aa6da;
+    color: #6699cc;
   }
 }
 @media print, projection {
