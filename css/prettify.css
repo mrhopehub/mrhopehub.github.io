@@ -69,7 +69,7 @@ li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
     list-style-type: decimal;
 }
 li.L1, li.L3, li.L5, li.L7, li.L9 {
-    background: #111;
+    background: #333;
 }
 @media print
 {
@@ -84,7 +84,7 @@ li.L1, li.L3, li.L5, li.L7, li.L9 {
     }
     .com
     {
-        color: #000;
+        color: #600;
         font-style: italic;
     }
     .typ
