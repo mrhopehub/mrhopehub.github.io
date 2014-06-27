@@ -4,7 +4,7 @@ title: "windows下编译jrtplib-3.9.1和jthread-1.3.1"
 ---
 
 ## windows下编译jrtplib-3.9.1和jthread-1.3.1
-<font color="blue">第一步，先下载三个必要的文件：</font>
+<font color="blue">第一步，先下载三个必要的文件</font>
 <blockquote>
 1. 下载 jrtplib-3.9.1：<br>
 2. 下载 jthread-1.3.1:<br>
