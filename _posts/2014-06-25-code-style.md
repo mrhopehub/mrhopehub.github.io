@@ -35,8 +35,7 @@ int main() {
 		if (i == section)
 			tmp = rest_cnt;
 		else
-			/* 该区间要产生数字的个数 */
-			tmp = get_rand(0, rest_cnt);
+			tmp = get_rand(0, rest_cnt); /* 该区间要产生数字的个数 */
 		/* 更新rest_cnt */
 		rest_cnt -= tmp;
 		cout << "区间[" << pow(10, i - 1) << "-" << pow(10, i) << ")生成" << tmp + 1
@@ -53,10 +52,8 @@ int get_rand(int left, int right) {
 	assert(left<right);
 	int result;
 	int offset = right - left;
-	/* 产生[0,offset)区间随机数 */
-	result = rand() % offset;
-	/* 再加上left */
-	result += left;
+	result = rand() % offset; /* 产生[0,offset)区间随机数 */
+	result += left; /* 再加上left */
 	return result;
 }
 
