@@ -1,5 +1,5 @@
 /* desert scheme ported from vim to google xmpttify */
-xmp.prettyprint { display: block; background-color: #333; font-size: 16px; }
+xmp.prettyprint { display: block; background-color: #333; font-size: 16px; font-family: 'Courier New' }
 xmp .nocode { background-color: none; color: #000 }
 xmp .str { color: #ffa0a0 } /* string  - pink */
 xmp .kwd { color: #f0e68c; font-weight: bold }
@@ -15,7 +15,7 @@ xmp .dec { color: #98fb98 } /* decimal         - lightgreen */
 
 /* Specify class=linenums on a xmp to get line numbering */
 ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: decimal }
 /* Alternate shading for lines */
 li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
