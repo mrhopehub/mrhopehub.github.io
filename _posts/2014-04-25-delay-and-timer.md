@@ -11,7 +11,7 @@ title: "计算机中的延时与定时"
 >>1.单片机时代查询计算指令的时钟周期，然后计算循环的总时钟周期来实现延时。<br><br>
 2.arm时代C程序成为主流的开发语言，通过计算时钟周期来延时不太如何实际。所以延时出现了新的方法。这里借鉴一下操作系统中“时间片”的概念，延时可以通过时间片实现，比如说时间片的长度是1ms，那么延时1s其实就是循环检查剩余的时间片，如果时间片为零则代表延时结束。代码：<br>
 <blockquote><blockquote>
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 	/*设置延时delay_time，单位时间片（比如1ms、100us等等）*/
 	int delay_time=1000;
 	while(delay_time);

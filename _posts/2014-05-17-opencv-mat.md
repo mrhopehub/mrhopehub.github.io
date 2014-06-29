@@ -39,7 +39,7 @@ CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel n
 注意到，子列的通道顺序是反过来的：BGR而不是RGB。很多情况下，因为内存足够大，可实现连续存储，因此，图像中的各行就能一行一行地连接起来，形成一个长行。连续存储有助于提升图像扫描速度，我们可以使用 isContinuous() 来去判断矩阵是否是连续存储的. 相关示例会在接下来的内容中提供。
 
 <font color="blue">第一种方法：</font>
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 {
     // accept only char type matrices
@@ -81,7 +81,7 @@ Mat& ScanImageAndReduceC(Mat& I, const uchar* const table)
 把图像看做是二维数组，且最基本的元素是RGB分量。所以<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<uchar>(i)</xmp>返回的是第i行的指针（注意并不是图像上第i行的指针）。是否有<xmp style="white-space: pre-wrap; word-wrap: break-word;">I.ptr<Vec3b>(i)</xmp>呢？？
 
 <font color="blue">第二种方法：</font>
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 Mat& ScanImageAndReduceIterator(Mat& I, const uchar* const table)
 {
     // accept only char type matrices

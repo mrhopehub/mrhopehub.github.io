@@ -14,7 +14,7 @@ http://book.51cto.com/art/201006/207259.htm
 自旋锁可以确保在同时只有一个线程进入临界区。其他想进入临界区的线程必须不停地原地打转，直到第1个线程释放自旋锁。注意：这里所说的线程不是内核线程，而是执行的线程。
 
 下面的例子演示了自旋锁的基本用法：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 #include <linux/spinlock.h> 
 spinlock_t mylock = SPIN_LOCK_UNLOCKED; /* Initialize */  
  
@@ -37,7 +37,7 @@ spin_unlock(&mylock); /* Release the lock */
 (2) 由于互斥体会在面临竞争的情况下将当前线程置于睡眠状态，因此，在中断处理函数中，只能使用自旋锁。（第4章将介绍更多的关于中断上下文的限制。）
 
 下面的例子演示了互斥体使用的基本方法：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 #include <linux/mutex.h> 
  
 /* Statically declare a mutex. To dynamically  
@@ -93,14 +93,14 @@ up(&mysem);      /* Release the semaphore */
 在这种情况下，为了保护临界区，仅仅需要禁止中断。如图2-4所示，假定进程上下文的执行单元A、B以及中断上下文的执行单元C都企图进入相同的临界区。
 ![](/images/内核中的并发/进程和中断上下文进入临界区.jpg)<br>
 由于执行单元C总是在中断上下文执行，它会优先于执行单元A和B，因此，它不用担心保护的问题。执行单元A和B也不必关心彼此会被互相打断，因为内核是非抢占的。因此，执行单元A和B仅仅需要担心C会在它们进入临界区的时候强行进入。为了实现此目的，它们会在进入临界区之前禁止中断：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 Point A：      
   local_irq_disable();  /* Disable Interrupts in local CPU */  
   /* ... Critical Section ...  */  
   local_irq_enable();   /* Enable Interrupts in local CPU */ 
 </xmp>
 但是，如果当执行到Point A的时候已经被禁止，local_irq_enable()将产生副作用，它会重新使能中断，而不是恢复之前的中断状态。可以这样修复它：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 unsigned long flags;  
  
 Point A:  
@@ -113,7 +113,7 @@ Point A:
 <font color="blue">3.案例3：进程和中断上下文，单CPU，抢占内核</font>
 
 如果内核使能了抢占，仅仅禁止中断将无法确保对临界区的保护，因为另一个处于进程上下文的执行单元可能会进入临界区。重新回到图2-4，现在，除了C以外，执行单元A和B必须提防彼此。显而易见，解决该问题的方法是在进入临界区之前禁止内核抢占、中断，并在退出临界区的时候恢复内核抢占和中断。因此，执行单元A和B使用了自旋锁API的irq变体：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 unsigned long flags;  
  
 Point A:  
@@ -133,7 +133,7 @@ Point A:
 现在假设临界区执行于SMP机器上，而且你的内核配置了CONFIG_SMP和CONFIG_PREEMPT。
 
 到目前为止讨论的场景中，自旋锁原语发挥的作用仅限于使能和禁止抢占和中断，时间的锁功能并未被完全编译进来。在SMP机器内，锁逻辑被编译进来，而且自旋锁原语确保了SMP安全性。SMP使能的含义如下：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 unsigned long flags;  
  
 Point A:  
@@ -155,7 +155,7 @@ implicitly disables preemption.
   spin_unlock_irqrestore(&mylock, flags); 
 </xmp>
 在SMP系统上，获取自旋锁时，仅仅本CPU上的中断被禁止。因此，一个进程上下文的执行单元（图2-4中的执行单元A）在一个CPU上运行的同时，一个中断处理函数（图2-4中的执行单元C）可能运行在另一个CPU上。非本CPU上的中断处理函数必须自旋等待本CPU上的进程上下文代码退出临界区。中断上下文需要调用spin_lock()/spin_unlock()：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 spin_lock(&mylock);  
  
 /* ... Critical Section ... */  

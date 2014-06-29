@@ -20,7 +20,7 @@ title: "linux类系统启动过程"
 <blockquote>
 1. uc/os
 <blockquote>
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U prio)
 </xmp>
 </blockquote>
@@ -36,7 +36,7 @@ INT8U  OSTaskCreate (void (\*task)(void \*pd),void \*pdata,OS_STK \*ptos,INT8U p
 * <font color="blue">总结一下：</font><br>
 <blockquote>
 <font color="red">嵌入式系统功能的实现或以裸机代码实现，或以OS中多进程实现，而进程代码可直接代码实现可读取可执行文件。</font>这也就是为什么linux操作系统需要文件系统。另一方面，linux内核启动结束
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
     run_init_process("/sbin/init");
     run_init_process("/etc/init");
     run_init_process("/bin/init");
