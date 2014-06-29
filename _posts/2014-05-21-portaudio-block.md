@@ -6,7 +6,7 @@ title: "PortAudio阻塞模式"
 # PortAudio阻塞模式
 ### 介绍
 PortAudio源码包中例子paex_read_write_wire.c的注释。代码：
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

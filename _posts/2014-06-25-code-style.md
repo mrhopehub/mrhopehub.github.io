@@ -3,7 +3,7 @@ layout: posts
 title: "编码风格示例"
 ---
 
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>

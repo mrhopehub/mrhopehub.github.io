@@ -5,7 +5,7 @@ title: "windows窗口程序"
 
 # windows窗口程序
 老掉牙的东西了，先上几个代码
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 /*-------------------------------------------------
    CHECKER1.C -- Mouse Hit-Test Demo Program No. 1
                  (c) Charles Petzold, 1998
@@ -124,7 +124,7 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 </xmp>
 <br><br>
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 /*-------------------------------------------------
    CHECKER3.C -- Mouse Hit-Test Demo Program No. 3
                  (c) Charles Petzold, 1998
@@ -269,7 +269,7 @@ LRESULT CALLBACK ChildWndProc (HWND hwnd, UINT message,
 
 </xmp>
 <br><br>
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 /*----------------------------------------
    BTNLOOK.C -- Button Look Program
                 (c) Charles Petzold, 1998

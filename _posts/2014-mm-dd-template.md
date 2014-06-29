@@ -3,7 +3,7 @@ layout: posts
 title: "eclipse 常用"
 ---
 
-<xmp class="prettyprint">
+<xmp class="prettyprint linenums">
 </xmp>
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 </xmp>
