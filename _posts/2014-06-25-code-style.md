@@ -2,7 +2,8 @@
 layout: posts
 title: "编码风格示例"
 ---
-
+# 编码风格示例
+### 随机整数
 <xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
@@ -50,6 +51,56 @@ int get_rand(int left, int right) {
 	int offset = right - left;
 	result = rand() % offset; /* 产生[0,offset)区间随机数 */
 	result += left; /* 再加上left */
+	return result;
+}
+
+</xmp>
+### 随机浮点数
+<xmp class="prettyprint linenums">
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+#include <assert.h>
+#include <iostream>
+using namespace std;
+ 
+/**
+ * 产生闭区间[left,right]的随机数，注意是闭区间,left < right
+ * 注意：需要先srand();
+ */
+float get_rand(float left, float right);
+ 
+int main() {
+	srand((unsigned) time(NULL)); /* 不要忘了播种 */
+
+	/* 产生[left,right]区间的浮点数
+	 * 首先在[0,500]区间产生随机数left
+	 * 在[501,1000]区间产生随机数right
+	 */
+	float left = get_rand(0, 500);
+	float right = get_rand(501,1000);
+
+	for (;;)
+	{
+		/* 如果产生的随机数大于right则结束循环 */
+		if (get_rand(left, right) > right)
+		{
+			printf("over!\n");
+			break;
+		}
+	}
+
+    return 0;
+}
+ 
+float get_rand(float left, float right) {
+	/* return ((right - left) * ((float)rand() / RAND_MAX)) + left; */
+    assert(left < right);
+	float result;
+	float len = right - left;
+	float rand_rate = (float)rand() / RAND_MAX;
+	result = (len * rand_rate) + left;
+	printf("%11f   %11f   %11f   %11f\n", len, rand_rate, result, right);
 	return result;
 }
 
