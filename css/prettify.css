@@ -1,6 +1,6 @@
 /* desert scheme ported from vim to google xmpttify */
 /* font-family作用效果与定义顺序相反 */
-xmp.prettyprint { display: block; background-color: #333; font-size: 16px; font-family: "Courier New" }
+xmp.prettyprint { display: block; background-color: #333; font-size: 16px; font-family: "Courier New","Microsoft YaHei" }
 xmp .nocode { background-color: none; color: #000 }
 xmp .str { color: #ffa0a0 } /* string  - pink */
 xmp .kwd { color: #f0e68c; font-weight: bold }
