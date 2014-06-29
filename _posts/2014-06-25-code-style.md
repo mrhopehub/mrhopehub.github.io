@@ -4,8 +4,8 @@ title: "编码风格示例"
 ---
 # 编码风格示例
 ### <font color="blue">debug</font>
-代码中的两个get_rand()函数没有用简单的宏实现，<br>
-比如#define get_rand(left,right) (((right - left) * ((float)rand() / RAND_MAX)) + left),这个宏看似没有问题，但其潜在的bug是right<left,<font color="red">假如在茫茫的code使用了这个宏，无异于埋下了定时炸弹，</font>这也就是两个get_rand()函数中assert(left < right)存在的理由，也是不要侥幸编程、断言式编程的应用。
+1. 代码中的两个get_rand()函数没有用简单的宏实现，<br>比如#define get_rand(left,right) (((right - left) * ((float)rand() / RAND_MAX)) + left),这个宏看似没有问题，但其潜在的bug是right<left,<font color="red">假如在茫茫的code使用了这个宏，无异于埋下了定时炸弹，</font>这也就是两个get_rand()函数中assert(left < right)存在的理由，也是不要侥幸编程、断言式编程的应用。
+2. float get_rand(float left, float right)函数，TODO标签的使用
 ### <font color="blue">随机整数</font>
 <xmp class="prettyprint linenums">
 #include <stdlib.h>
@@ -74,37 +74,37 @@ using namespace std;
 float get_rand(float left, float right);
  
 int main() {
-	srand((unsigned) time(NULL)); /* 不要忘了播种 */
-
-	/* 产生[left,right]区间的浮点数
-	 * 首先在[0,500]区间产生随机数left
-	 * 在[501,1000]区间产生随机数right
-	 */
-	float left = get_rand(0, 500);
-	float right = get_rand(501,1000);
-
-	for (;;)
-	{
-		/* 如果产生的随机数大于right则结束循环 */
-		if (get_rand(left, right) > right)
-		{
-			printf("over!\n");
-			break;
-		}
-	}
-
+    srand((unsigned) time(NULL)); /* 不要忘了播种 */
+ 
+    /* 产生[left,right]区间的浮点数
+     * 首先在[0,500]区间产生随机数left
+     * 在[501,1000]区间产生随机数right
+     */
+    float left = get_rand(0, 500);
+    float right = get_rand(501,1000);
+ 
+    for (;;)
+    {
+        /* 如果产生的随机数大于right则结束循环 */
+        if (get_rand(left, right) > right)
+        {
+            printf("over!\n");
+            break;
+        }
+    }
+ 
     return 0;
 }
  
 float get_rand(float left, float right) {
-	/* return ((right - left) * ((float)rand() / RAND_MAX)) + left; */
     assert(left < right);
-	float result;
-	float len = right - left;
-	float rand_rate = (float)rand() / RAND_MAX;
-	result = (len * rand_rate) + left;
-	printf("%11f   %11f   %11f   %11f\n", len, rand_rate, result, right);
-	return result;
+	//TODO 迭代/* return ((right - left) * ((float)rand() / RAND_MAX)) + left; */
+    float result;
+    float len = right - left;
+    float rand_rate = (float)rand() / RAND_MAX;
+    result = (len * rand_rate) + left;
+    printf("%11f   %11f   %11f   %11f\n", len, rand_rate, result, right);
+    return result;
 }
 
 </xmp>
