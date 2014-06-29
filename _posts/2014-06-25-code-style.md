@@ -3,7 +3,7 @@ layout: posts
 title: "编码风格示例"
 ---
 # 编码风格示例
-### 随机整数
+### <font color="blue">随机整数</font>
 <xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
@@ -55,7 +55,7 @@ int get_rand(int left, int right) {
 }
 
 </xmp>
-### 随机浮点数
+### <font color="blue">随机浮点数</font>
 <xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
