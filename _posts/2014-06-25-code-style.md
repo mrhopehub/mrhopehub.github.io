@@ -65,6 +65,7 @@ int get_rand(int left, int right) {
 #include <math.h>
 #include <assert.h>
 #include <iostream>
+#include <stdio.h>
 using namespace std;
  
 /**
