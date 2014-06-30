@@ -33,5 +33,5 @@ Gui线程负责取走（get）和分发（dispatch）消息，同时负责描绘
 消息分发时要考虑到复杂的重入性问题，很难确保一个事件处理器阻塞时，可以安全分发其他GUI事件以响应消息。
 
 因此，一种相对而言更容易掌握的解决方法就是只有在GUI线程中的代码才能够操纵GUI控件，在更新GUI时所需要的其他数据和计算都必须在其他线程中完成，而不是在GUI线程上。如图：
-<img src="/images/gui架构/gui+workthread.jpg" width="800" />
+<img src="/images/gui架构/gui+workthread.jpg" width="800" /><br>
 通常这意味着把工作转交给线程池完成，然后在得到结果后把结果合并回GUI线程上。
