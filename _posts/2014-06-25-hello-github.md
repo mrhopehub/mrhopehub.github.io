@@ -44,3 +44,4 @@ git commit -a -m 'comment'
 git push origin master
 </xmp>
 </blockequtoe>
+<font color="blue">最后需要注意的是上面都是首次配置git、github的的情况。</font>
