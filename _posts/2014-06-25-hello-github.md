@@ -16,7 +16,6 @@ title: "一次不愉快的GITHUB经历"
 </blockquote>
 
 #### <font color="blue">配置git</font>
-<blockquote>
 1. 产生密钥并测试<br>
 打开C:\PortableGit-1.9.0-preview20140217目录下git-bash.bat，
 <xmp class="prettyprint linenums">
@@ -43,6 +42,5 @@ git add ./*
 git commit -a -m 'comment'
 git push origin master
 </xmp>
-</blockequtoe>
 
 #### <font color="blue">最后需要注意的是上面都是首次配置git、github的的情况。</font>
