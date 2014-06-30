@@ -6,6 +6,7 @@ title: "编码风格示例"
 ### <font color="blue">debug</font>
 1. 代码中的两个get_rand()函数没有用简单的宏实现，<br>比如#define get_rand(left,right) (((right - left) * ((float)rand() / RAND_MAX)) + left),这个宏看似没有问题，但其潜在的bug是right<left,<font color="red">假如在茫茫的code使用了这个宏，无异于埋下了定时炸弹，</font>这也就是两个get_rand()函数中assert(left < right)存在的理由，也是不要靠巧合编程、断言式编程的应用。
 2. float get_rand(float left, float right)函数，TODO标签的使用
+
 ### <font color="blue">随机整数</font>
 <xmp class="prettyprint linenums">
 #include <stdlib.h>
