@@ -16,6 +16,7 @@ title: "一次不愉快的GITHUB经历"
 </blockquote>
 
 #### <font color="blue">配置git</font>
+
 1. 产生密钥并测试<br>
 打开C:\PortableGit-1.9.0-preview20140217目录下git-bash.bat，
 <xmp class="prettyprint linenums">
