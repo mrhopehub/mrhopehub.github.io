@@ -21,7 +21,7 @@ Step2：Download and Set Up MinGW Installation Manager，出现如下图错误�
 ![MinGW Installation Manager](/images/MinGW install/MinGW Installation Manager.jpg)<br>
 然后菜单Installation-->Apply Changes-->Review Changes-->Apply,然后等待下载，如图：<br>
 ![Download Package](/images/MinGW install/Download Package.jpg)<br>
-<font color="red">同样由于网络的原因，还有代理的原因，可能出现如下的错误：</font><br>
+<font color="red">同样由于网络的原因，还有代理的原因，下载的过程中可能出现如下的错误：</font><br>
 ![mingw-get-error](/images/MinGW install/mingw-get-error.jpg)<br>
 <font color="red">只需确定即可，再后面会补救的。</font><br>
 下载完成之后，可能会出现错误，<font color="red">这也就是代理软件的问题吧，传输出现错误（即使下载中没有明显的弹出错误窗口）。如下图：</font><br>
