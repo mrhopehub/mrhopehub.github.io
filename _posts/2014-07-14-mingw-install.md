@@ -31,5 +31,5 @@ Step2：Download and Set Up MinGW Installation Manager，出现如下图错误�
 上面的整个过程只是相当于下载、解压，所以就需要手动设置path，只要把C:\MinGW\bin添加到path即可。<br>
 <font color="red">从上面也可以看出，卸载的时候，只要从path中删除C:\MinGW\bin，并把C:\MinGW整个目录删除即可。</font>
 #### <font color="blue">离线安装</font>
-下载地址：http://cm.baidupcs.com/file/edd629820cb20085214b9c95c33418b4?fid=2015837509-250528-581091062564248&time=1405388278&sign=FDTAXER-DCb740ccc5511e5e8fedcff06b081203-IGFnz09%2B%2BefpBkwdJgQ1JaIUE6w%3D&to=cmb&fm=N,B,G,mn&newver=1&expires=8h&rt=pr&r=593438819&logid=389965092&vuk=2015837509&fn=MinGW%E5%AE%89%E8%A3%85.zip<br>
+下载地址：[离线安装包](http://cm.baidupcs.com/file/edd629820cb20085214b9c95c33418b4?fid=2015837509-250528-581091062564248&time=1405388278&sign=FDTAXER-DCb740ccc5511e5e8fedcff06b081203-IGFnz09%2B%2BefpBkwdJgQ1JaIUE6w%3D&to=cmb&fm=N,B,G,mn&newver=1&expires=8h&rt=pr&r=593438819&logid=389965092&vuk=2015837509&fn=MinGW%E5%AE%89%E8%A3%85.zip)<br>
 关于翻墙软件就不上传了。
