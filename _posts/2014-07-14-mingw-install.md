@@ -23,7 +23,7 @@ Step2：Download and Set Up MinGW Installation Manager，出现如下图错误�
 ![Download Package](/images/MinGW install/Download Package.jpg)<br>
 <font color="red">同样由于网络的原因，还有代理的原因，下载的过程中可能出现如下的错误：</font><br>
 ![mingw-get-error](/images/MinGW install/mingw-get-error.jpg)<br>
-<font color="red">只需确定即可，再后面会补救的。</font><br>
+<font color="red">只需确定即可，在后面会补救的。</font><br>
 下载完成之后，可能会出现错误，<font color="red">这也就是代理软件的问题吧，传输出现错误（即使下载中没有明显的弹出错误窗口）。如下图：</font><br>
 ![Download Package error](/images/MinGW install/Download Package error.jpg)<br>
 找出所有ERROR的包，比如上图中的adalib，就把C:\MinGW\var\cache\mingw-get\packages目录下的gcc-ada-4.8.1-4-mingw32-bin.tar.lzma、gcc-ada-4.8.1-4-mingw32-dev.tar.lzma、gcc-ada-4.8.1-4-mingw32-dll.tar.lzma删除掉。而且只留C:\MinGW\var\cache\mingw-get\packages这个目录分支，其他的分支都要删除，而且该目录下的.in-transit目录也要删除。<font color="red">意思是留下的都是正确下载的packages,然后重新开始安装。直到没有ERROR包，记得有一次安装，竟然连grep命令都没有。</font>
