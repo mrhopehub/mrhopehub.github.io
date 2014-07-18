@@ -9,7 +9,7 @@ title: "嵌入式bootloader注意点"
 ### 设备的初始化
 ##### <font color="blue">控制台(console)的初始化</font>
 
-* 注意这里没有采用“串口”的说法，注意他们之间的区别。通常的情况是video framebuffer driver或者a serial driver作为console。arm linux系统通常是a serial driver（貌似android手机使用的是video framebuffer driver）。在bootloader阶段控制台是可交互的。但是对于内核来需要来说bootloader并不需要这么多的工作，<font color="red">只需要完成enabling any hardware power management etc.即可。内核会 automatically detect which serial port it should use for the kernel console。当然也可以通过'console=' parameter指定某个串口初始化为console</font>但是bootloader初始化可交互的console是为了完成bootloader阶段的调试等等目的。<font color="blue">换个角度看，console是一个虚拟的，最终是要映射到video framebuffer driver或者a serial driver</font>
+* 注意这里没有采用“串口”的说法，注意他们之间的区别。通常的情况是video framebuffer driver或者a serial driver作为console。arm linux系统通常是a serial driver（貌似android手机使用的是video framebuffer driver）。在bootloader阶段控制台是可交互的。但是对于内核来需要来说bootloader并不需要这么多的工作，<font color="red">只需要完成enabling any hardware power management etc.即可。内核会 automatically detect which serial port it should use for the kernel console。当然也可以通过'console=' parameter指定某个串口初始化为console</font>但是bootloader初始化可交互的console是为了完成bootloader阶段的调试等等目的。<font color="blue" size="5">换个角度看，console是一个虚拟的，最终是要映射到video framebuffer driver或者a serial driver</font>
 
 ##### <font color="blue">内存系统初始化</font>
 
