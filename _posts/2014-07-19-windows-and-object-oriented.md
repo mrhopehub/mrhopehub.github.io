@@ -72,7 +72,14 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 
 ### <font color="blue">添加相应函数((“Your Project Name”).cpp)</font>
 
-1. 添加菜单处理函数
+1. 添加全局变量
+<xmp class="prettyprint linenums">
+enum operation {ADD,SUB,MULT,REM};
+operation op = ADD;
+</xmp>
+如图<br>
+![op](/images/windows and oo/op.jpg)<br>
+2. 添加菜单处理函数
 <xmp class="prettyprint linenums">
     	case IDM_ADD:
 			SetDlgItemText(hWnd, IDC_OPBUTTON, TEXT("+"));
@@ -93,7 +100,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 </xmp>
 如图:<br>
 ![wm_menu](/images/windows and oo/wm_menu.jpg)<br>
-2. 添加运算按钮处理函数,不要忘了case下的第一层大括号
+3. 添加运算按钮处理函数,不要忘了case下的第一层大括号
 <xmp class="prettyprint linenums">
     	case IDC_OPBUTTON:
 			{
