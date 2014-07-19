@@ -72,7 +72,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 
 ### <font color="blue">添加相应函数((“Your Project Name”).cpp)</font>
 
->1. 添加菜单处理函数
+1. 添加菜单处理函数
 <xmp class="prettyprint linenums">
     	case IDM_ADD:
 			SetDlgItemText(hWnd, IDC_OPBUTTON, TEXT("+"));
