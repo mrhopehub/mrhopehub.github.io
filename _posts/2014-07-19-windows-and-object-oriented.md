@@ -134,3 +134,17 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 ![wm_button](/images/windows and oo/wm_button.jpg)<br>
 
 ### <font color="blue">生成工程</font>
+### <font color="blue">小结</font>
+
+1. <font color="red">面向对象的角度</font><br>
+windows平台的窗口虽然已经有了面向对象的思想，而且把窗口中的空间也看作是特殊的窗口，从上面的程序也可以看出，在访问子控件的内容时（GetDlgItemInt(hWnd, IDC_LHS, &success, true);），并不像java swing那样的纯面向对象（JTextField tf;int n = Integer.parseInt(tf.getText());）。从这个角度看，windows的窗口并不是面向对象，而且不像传统的对象（含有传统的数值成员变量）和swing中的对象（像对象一样访问其内容tf.getText()）
+2. <font color="red">编程最基本的问题之数据访问</font><br>
+最开始在接受了把窗口看做对象的思想时（特别是MFC之socket编程总结：面向对象文章中，窗口对象中添加了，socket对象），就把窗口中的控件看做对象，在访问时总是面向对象的思路（swing的思想），上面也可以看出来，实际上窗口并没有显示的子控件对象，所以这种思路也不行。<font color="blue">在GUI环境下，访问数据不再只有对象、变量的形式，还有有API决定方式，如上面的使用GetDlgItemInt函数和窗口句柄</font>
+3. <font color="red">上面两个角度总结一下</font><br>
+拿访问编辑框的内容为例
+
+>1. 通过子窗口句柄，Int GetWindowText（HWND hWnd，LPTSTR lpString，Int nMaxCount），需要在创建子控件的时候保存窗口句柄
+2. 通过资源ID，UINT GetDlgItemInt(int nID, BOOL\* lpTrans = NULL, BOOL bSigned = TRUE）
+3. 1、2的结合，即创建控件时不保存句柄，而是通过资源ID来获取子控件ID，HWND GetDlgItem(HWNDhDlg, intnIDDlgItem)。
+4. MFC中的窗口，只有顶层的窗口可以添加传统的数值型的成员变量，其子控件的获取也可以通过1、2、3方法得到，当时也可以通过DDX机制实现，即父窗口的数值成员变量与子控件的数据交换，但子控件还是不想java中的纯对象控件。
+5. 多窗口应用程序中顶层窗口可以有数值型的成员变量，而且可以通过对象访问。
