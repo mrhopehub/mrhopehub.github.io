@@ -3,12 +3,12 @@ layout: posts
 title: "windows窗口与面向对象"
 ---
 
-### 译(Making a simple application using the Win32 API)
+# 译(Making a simple application using the Win32 API)
 
-##### <font color="blue">按Wizard默认生成一个标准的win32程序</font>
-##### <font color="blue">修改资源文件、窗口外观</font>
+### <font color="blue">按Wizard默认生成一个标准的win32程序</font>
+### <font color="blue">修改资源文件、窗口外观</font>
 
->1. Resource.h添加
+1. Resource.h添加
 <xmp class="prettyprint linenums">
 #define IDM_ADD        		110
 #define IDM_SUB				111
@@ -20,7 +20,7 @@ title: "windows窗口与面向对象"
 #define IDC_OPBUTTON		117
 </xmp>
 如图：<br>
-![ID](/images/windows and oo/id.jpg)
+![ID](/images/windows and oo/id.jpg)<br>
 2. 右键(“Your Project Name”).rc-->查看代码,IDC_CALC MENU下添加
 <xmp class="prettyprint linenums">
 	POPUP "计算(&O)"
@@ -32,7 +32,7 @@ title: "windows窗口与面向对象"
 	END
 </xmp>
 如图：<br>
-![MENU](/images/windows and oo/menu.jpg)
+![MENU](/images/windows and oo/menu.jpg)<br>
 3. (“Your Project Name”).cpp中<br><font color="blue">MyRegisterClass()修改窗口背景颜色</font>
 <xmp class="prettyprint linenums">
 wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
@@ -43,9 +43,9 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 		CW_USEDEFAULT, 0, 200, 200, NULL, NULL, hInstance, NULL);
 </xmp>
 
-##### <font color="blue">向窗口中添加控件((“Your Project Name”).cpp)</font>
+### <font color="blue">向窗口中添加控件((“Your Project Name”).cpp)</font>
 
->1. 添加WM_CREATE消息处理
+1. 添加WM_CREATE消息处理
 <xmp class="prettyprint linenums">
     case WM_CREATE:
 		CreateWindowEx(WS_EX_CLIENTEDGE, TEXT("EDIT"), TEXT("0"),
@@ -67,9 +67,9 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 		LineTo(hdc, 115, 78);
 </xmp>
 如图<br>
-![WM_PAINT](/images/windows and oo/wm_paint.jpg)
+![WM_PAINT](/images/windows and oo/wm_paint.jpg)<br>
 
-##### <font color="blue">添加相应函数((“Your Project Name”).cpp)</font>
+### <font color="blue">添加相应函数((“Your Project Name”).cpp)</font>
 
 >1. 添加菜单处理函数
 <xmp class="prettyprint linenums">
@@ -91,7 +91,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 			break;
 </xmp>
 如图:<br>
-![wm_menu](/images/windows and oo/wm_menu.jpg)
+![wm_menu](/images/windows and oo/wm_menu.jpg)<br>
 2. 添加运算按钮处理函数,不要忘了case下的第一层大括号
 <xmp class="prettyprint linenums">
     	case IDC_OPBUTTON:
@@ -130,6 +130,6 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 			}
 </xmp>
 如图:<br>
-![wm_button](/images/windows and oo/wm_button.jpg)
+![wm_button](/images/windows and oo/wm_button.jpg)<br>
 
-##### <font color="blue">生成工程</font>
+### <font color="blue">生成工程</font>
