@@ -146,5 +146,5 @@ windows平台的窗口虽然已经有了面向对象的思想，而且把窗口�
 >1. 通过子窗口句柄，Int GetWindowText（HWND hWnd，LPTSTR lpString，Int nMaxCount），需要在创建子控件的时候保存窗口句柄
 2. 通过资源ID，UINT GetDlgItemInt(int nID, BOOL\* lpTrans = NULL, BOOL bSigned = TRUE）
 3. 1、2的结合，即创建控件时不保存句柄，而是通过资源ID来获取子控件ID，HWND GetDlgItem(HWNDhDlg, intnIDDlgItem),网上例子：Win32 Examples: Net Price Calculation。
-4. MFC中的窗口，只有顶层的窗口可以添加传统的数值型的成员变量，其子控件的获取也可以通过1、2、3方法得到，当时也可以通过DDX机制实现，即父窗口的数值成员变量与子控件的数据交换，但子控件还是不想java中的纯对象控件。
+4. MFC中的窗口，只有顶层的窗口可以添加传统的数值型的成员变量，其子控件的获取也可以通过1、2、3方法得到，当时也可以通过DDX机制实现，即父窗口的数值成员变量与子控件的数据交换，但子控件还是不像java中的纯对象控件。
 5. 多窗口应用程序中顶层窗口可以有数值型的成员变量，而且可以通过对象访问。
