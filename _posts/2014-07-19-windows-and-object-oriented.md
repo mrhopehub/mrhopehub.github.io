@@ -60,6 +60,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 		CreateWindowEx(NULL, TEXT("BUTTON"), TEXT("+"),
 			WS_CHILD|WS_VISIBLE|WS_CHILD|BS_DEFPUSHBUTTON|WS_TABSTOP,
 			115, 45, 85, 25, hWnd, (HMENU)IDC_OPBUTTON, GetModuleHandle(NULL), NULL);
+		break;
 </xmp>
 2. 绘制分割线,修改WM_PAINT消息处理
 <xmp class="prettyprint linenums">
