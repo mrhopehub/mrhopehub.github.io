@@ -18,7 +18,10 @@ ffmpeg抽取视频中motion vector的小结，
 #### <font color="blue">编译工程</font>
 可见有很多错误，其中需要修改的是：
 
-1. 注释掉<xmp class="prettyprint linenums">#include <stdbool.h></xmp>
+1. 注释掉
+<xmp class="prettyprint linenums">
+#include <stdbool.h>
+</xmp>
 2. 添加extern "C"相关
 3. FF_P_TYPE等改为AV_PICTURE_TYPE_P
 4. av_open_input_file(&pFormatCtx, argv[1], NULL, 0, NULL)改为<br>avformat_open_input(&pFormatCtx, argv[1], NULL, NULL)
