@@ -156,7 +156,7 @@ windows平台的窗口虽然已经有了面向对象的思想，而且把窗口�
 4. MFC中的窗口，只有顶层的窗口可以添加传统的数值型的成员变量，其子控件的获取也可以通过1、2、3方法得到，<font color="red">当然也可以通过DDX机制实现，而DDX又分为DDX_Control、DDX_Text，DDX_Text还是没有纯OO的思想，而DDX_Control体现了纯OO对象。</font>
 5. 多窗口应用程序中顶层窗口可以有数值型的成员变量，而且可以通过对象访问。
 6. <font color="red">所以往往是OP的接口+OO的思想，如GetWindowText，OP的接口，而HWND hWnd貌似OO单也不算是对象（对象的索引），</font>再如
-<xmp class="prettyprint linenums">
+><xmp class="prettyprint linenums">
 extern DECLSPEC int SDLCALL SDL_RenderCopyEx(SDL_Renderer * renderer,
                                            SDL_Texture * texture,
                                            const SDL_Rect * srcrect,
@@ -165,4 +165,4 @@ extern DECLSPEC int SDLCALL SDL_RenderCopyEx(SDL_Renderer * renderer,
                                            const SDL_Point *center,
                                            const SDL_RendererFlip flip);
 </xmp>
-<font color="red">是否可以把SDL_RenderCopyEx作为SDL_Renderer（如果把SDL_Renderer这个结构体封装成类）的方法。另一方面可以把SDL_RenderCopyEx看做SDL（虚拟）这个类的方法，这样的话SDL_RenderCopyEx这个功能的划分到底是划分给SDL呢，还是SDL_Renderer呢？？</font>
+><font color="red">是否可以把SDL_RenderCopyEx作为SDL_Renderer（如果把SDL_Renderer这个结构体封装成类）的方法。另一方面可以把SDL_RenderCopyEx看做SDL（虚拟）这个类的方法，这样的话SDL_RenderCopyEx这个功能的划分到底是划分给SDL呢，还是SDL_Renderer呢？？</font>
