@@ -177,7 +177,7 @@ void CMFCCAsyncSocketdemoDlg::OnClose()
 	this->m_btn_discon.EnableWindow(false);
 }
 </xmp>
->* “连接服务器”按钮响应函数,<font color="red">注意dwAddress与m_address的转换，另外m_socket.Create();是不可缺少的</font>
+>* “连接服务器”按钮响应函数,<font color="red">注意dwAddress与m_address的转换，CString与int的转换，另外m_socket.Create();是不可缺少的</font>
 ><xmp class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnBnClickedButton1()
 {
@@ -185,6 +185,9 @@ void CMFCCAsyncSocketdemoDlg::OnBnClickedButton1()
 	DWORD dwAddress;
 	this->m_ipcontrol.GetAddress(dwAddress);
 	this->m_address.Format(_T("%d.%d.%d.%d"),(0xFF000000&dwAddress)>>24,(0xFF0000&dwAddress)>>16,(0xFF00&dwAddress)>>8,0xFF&dwAddress);
+	CString csport;
+	this->m_portcontrol.GetWindowText(csport);
+	this->m_port = _ttoi(csport);	
 	//重要的地方:Create()
 	this->m_socket.Create();
 	this->m_socket.Connect(m_address,m_port);
@@ -215,3 +218,5 @@ void CMFCCAsyncSocketdemoDlg::OnBnClickedButton2()
 服务端：create-->listen-->onaccept-->accept-->send-->onsend-->onclose(close)<br>
 <font color="red">注意：如果一方主动close，那么对方处理onclose，本方并没有onclose。</font>
 3. 本例的“确定”、“取消”的响应函数并没有检查m_socket的连接是否close，实际上是需要处理的。
+4. 并没有检测端口的有效性。
+5. [github](https://github.com/mrhopehub/MFC-CAsyncSocket-demo)
