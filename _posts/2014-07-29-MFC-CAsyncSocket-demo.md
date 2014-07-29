@@ -214,3 +214,4 @@ void CMFCCAsyncSocketdemoDlg::OnBnClickedButton2()
 客户端：create-->connect-->onconnect-->onreceive-->receive-->close(onclose)<br>
 服务端：create-->listen-->onaccept-->accept-->send-->onsend-->onclose(close)<br>
 <font color="red">注意：如果一方主动close，那么对方处理onclose，本方并没有onclose。</font>
+3. 本例的“确定”、“取消”的响应函数并没有检查m_socket的连接是否close，实际上是需要处理的。
