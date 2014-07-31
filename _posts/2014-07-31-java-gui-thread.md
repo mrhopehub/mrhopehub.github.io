@@ -3,6 +3,7 @@ layout: posts
 title: "(转)Java GUI编程SwingUtilities.invokeLater作用"
 ---
 
+# (转)Java GUI编程SwingUtilities.invokeLater作用
 Swing图型界面多线程编程过程中的一些误区<br>
 <br>
 很多学JAVA程序员都是从Swing开始的，但很多人对AWT GUI线程的机制并没有太深的了解，或者说一直都只了解线程的概念，而不了解AWT对线程的使用。我发现很多人碰到线程阻塞的问题，就通过调用SwingUtilities.invokeLater()来解决。<br>
