@@ -30,7 +30,7 @@ title 【12】 PartedMagic<br>
 kernel (ud)/BOOT/pmagic/bzImage<br>
 initrd (ud)/BOOT/pmagic/initrd.img<br>
 
-### 备份与恢复U盘启动,或者说更简单的制作方法
+### 备份与恢复U盘启动,或者说更简单的制作方法（注意备份U盘数据）
 >备份
 
 >1. 启动FbinstTool工具，数据管理-->备份ud到fba文件
