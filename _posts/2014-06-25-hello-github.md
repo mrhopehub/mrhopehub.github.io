@@ -25,7 +25,7 @@ ssh-keygen -t rsa -C "your_email@youremail.com"
 ssh -T git@github.com
 </xmp>
 如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。<br>
-<font color="red">注意是打开git-bash.bat，而不是windows的运行窗口（git ssh-keygen会提示git没有这个选项），</font>
+<font color="red">注意是打开git-bash.bat，而不是windows的运行窗口（git ssh-keygen会提示git没有这个选项），</font><br>
 2. 设置用户名、邮箱<br>
 <xmp class="prettyprint linenums">
 git config --global user.name "your name"
