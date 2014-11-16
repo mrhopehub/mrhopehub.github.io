@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "eclipse 常用"
+title: "Kbuild两个target"
 ---
 
 ### 1.各个子目录相应的build-in.o链接为vmlinux
