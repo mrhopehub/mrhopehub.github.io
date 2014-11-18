@@ -86,7 +86,7 @@ movl %[next_sp],%%esp
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 这里，如果之前B也被switch_to出去过，那么[next_ip]里存的就是下面这个1f的标号，但如果进程B刚刚被创建，之前没有被switch_to出去过，那么[next_ip]里存的将是ret_ftom_fork（参看copy_thread()函数）。这就是这里为什么不用call __switch_to而用jmp，因为call会导致自动把下面这句话的地址(也就是1:)压栈，然后__switch_to()就必然只能ret到这里，而无法根据需要ret到ret_from_fork。
 </xmp>
-### next是否是新进程
+### next是否是新进程（没有switch_to过的进程，如fork出的子进程）
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 1.如果next是新进程，虽然
 </xmp>
