@@ -96,5 +96,7 @@ movl %[next_sp],%%esp
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
+<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 之后是的真正开始点，但是此时硬件上下文还不是next进程的。__switch_to进行硬件上下文恢复之后才算是完全恢复next进程。<br>
 综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。
+</xmp>
