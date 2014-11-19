@@ -6,7 +6,7 @@ title: "Linux中的likely()和unlikely()"
 ### [(转)Linux中的likely()和unlikely()](http://blog.chinaunix.net/uid-25409479-id-158584.html)
 likely()与unlikely()在2.6内核中，随处可见，那为什么要用它们？它们之间有什么区别呢？<br>
 首先明确：
->if (likely(value))等价于if (value)
+>if (likely(value))等价于if (value)<br>
 >if (unlikely(value))等价于if (value)
 
 也就是说likely()和unlikely()从阅读和理解的角度是一样的。<br>
