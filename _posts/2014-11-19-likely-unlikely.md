@@ -28,7 +28,7 @@ if(unlikely(a<b)){
 	fun2();
 }
 </xmp>
-<xmp class="my_xmp_class" style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class" style="white-space: pre-wrap; word-wrap: break-word; font-size: 16px;">
 	这里就是程序员可以确定 a>b 在程序执行流程中出现的可能相比较大，因此运用了likely()告诉编译器将fun1()函数的二进制代码紧跟在前面程序的后面，这样就cache在预取数据时就可以将fun1()函数的二进制代码拿到cache中。这样，也就添加了cache的命中率。
 	同样的，unlikely()的作用就是告诉编译器，a<b的可能性很小所以这里在编译时,将fun2()的二进制代码尽量不要和前边的编译在一块。
 	咱们不用对likely和unlikely感到迷惑，须要知晓的就是 if(likely(a>b)) 和 if(a>b)在功能上是等价的，同样 if(unlikely(a<b)) 和 if(a<b) 的功能也是一样的。不一样的只是他们声称的二进制代码有所不一样，这一点咱们也可以从他们的汇编代码中看到。比如下面的代码：
