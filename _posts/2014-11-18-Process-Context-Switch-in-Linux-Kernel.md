@@ -94,8 +94,10 @@ movl %[next_sp],%%esp
 movl %[next_sp],%%esp
 </xmp>
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
-之后是在next进程上运行，但是并不是next进程（新进程）的真正开始点，而ret_ftom_fork才新进程的开始点。<font color="red" size="16px">要注意一句话，当处理器切换到某个进程时，不必是上次切换出去时的下一条指令，也就是说切换到next进程时并不一定要运行ret_ftom_fork，而是要继续做一下切换的后续管理工作（硬件上下文的保存、恢复），之后再跳转到ret_ftom_fork（也就是\_\_switch\_to函数返回）</font>
-
+之后是在next进程上运行，但是并不是next进程（新进程）的真正开始点，而ret_ftom_fork才新进程的开始点。
+</xmp>
+<font color="red" size="16px">要注意一句话，当处理器切换到某个进程时，不必是上次切换出去时的下一条指令，也就是说切换到next进程时并不一定要运行ret_ftom_fork，而是要继续做一下切换的后续管理工作（硬件上下文的保存、恢复），之后再跳转到ret_ftom_fork（也就是\_\_switch\_to函数返回）</font>
+<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 2.如果next进程不是新进程（next进程被switch_to过），虽然
 </xmp>
 <xmp class="prettyprint linenums">
