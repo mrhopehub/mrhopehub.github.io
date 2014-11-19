@@ -4,8 +4,8 @@ title: "eclipse 常用"
 ---
 
 # <font size="6"></font><!--文章标题，黑色、6大小-->
-# <font color="blue" size="4"></font><!--一级小节，蓝色、4大小-->
-# <font color="blue" size="3"></font><!--二级小节，蓝色、3大小-->
+# <font color="blue" size="5"></font><!--一级小节，蓝色、5大小-->
+# <font color="blue" size="4"></font><!--二级小节，蓝色、4大小-->
 <xmp class="prettyprint linenums"><!--代码标签-->
 </xmp>
 <xmp class="my_xmp_class"><!--默认大小，格式化文本标签-->
