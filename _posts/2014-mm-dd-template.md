@@ -7,7 +7,7 @@ title: "eclipse 常用"
 </xmp>
 <xmp class="my_xmp_class">
 </xmp>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 16px;">
 </xmp>
-<font color="red" size="3"></font>
+<font color="red" size="16px"></font>
 ![向导](/images/DDXDDV/向导.jpg)<br>
