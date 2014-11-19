@@ -81,7 +81,7 @@ This piece of code is so excellent and well designed, and the functionalities ar
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
-上面这条命令作用是把next->thread.esp装入esp。即进行esp切换，之后的指令已经是在next进程，只不过还要进行硬件上下文的切换（之前的版本由控制器自动实现），所以可以把堆栈切换之后的指令，看做next进程（代替控制器）去完成硬件上下文的切换（因为next进程在内核态，所以可以访问prev与next进程，从而去保存prev进程硬件上下文，恢复自己的硬件上下文）。<br><br>
+上面这条命令作用是把next->thread.esp装入esp。即进行esp切换，之后的指令已经是在next进程，只不过还要进行硬件上下文的切换（之前的版本由控制器自动实现），所以可以把堆栈切换之后的指令，看做next进程（代替控制器）去完成硬件上下文的切换（因为next进程在内核态，所以可以访问prev与next进程，从而去保存prev进程硬件上下文，恢复自己的硬件上下文），可以从另一个角度看：内核代码运行在prev或者next进程上来实现对prev、next进程的管理。<br><br>
 ### 为什么不化简成call __switch_to
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 这里，如果之前B也被switch_to出去过，那么[next_ip]里存的就是下面这个1f的标号，但如果进程B刚刚被创建，之前没有被switch_to出去过，那么[next_ip]里存的将是ret_ftom_fork（参看copy_thread()函数）。这就是这里为什么不用call __switch_to而用jmp，因为call会导致自动把下面这句话的地址(也就是1:)压栈，然后__switch_to()就必然只能ret到这里，而无法根据需要ret到ret_from_fork。
