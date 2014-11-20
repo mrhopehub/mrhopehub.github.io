@@ -33,7 +33,7 @@
 
 /* Put a border around prettyprinted code snippets. */
 /* 控制代码格式与边框格式，可以参考mydesert.css中的xmp.prettyprint */
-pre.prettyprint { padding: 2px; border: 1px solid #888; }
+xmp.prettyprint { padding: 2px; border: 1px solid #888; }
 
 /* Specify class=linenums on a pre to get line numbering */
 /* 设置代码行号的缩进、颜色 */
