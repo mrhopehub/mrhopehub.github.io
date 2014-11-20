@@ -2,8 +2,9 @@
 layout: posts
 title: "windows下多线程同步、互斥"
 ---
-小结：[http://blog.csdn.net/column/details/killthreadseries.html](http://blog.csdn.net/column/details/killthreadseries.html)
+
 # <font color="blue">windows下多线程同步、互斥</font>
+参考：[http://blog.csdn.net/column/details/killthreadseries.html](http://blog.csdn.net/column/details/killthreadseries.html)<br>
 主要四种技术——关键段CS、互斥量Mutex、事件Event、信号量Semaphore
 ## <font color="blue">同步还是互斥</font>
 
