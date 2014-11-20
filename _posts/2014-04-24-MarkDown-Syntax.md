@@ -132,4 +132,5 @@ End a line with two or more spaces:
 
 	Roses are red,   
 	Violets are blue.
+## 语法图表
 ![向导](/images/markdown语法/mdcheatsheet.png)
