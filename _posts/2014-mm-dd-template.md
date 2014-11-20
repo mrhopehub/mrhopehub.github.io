@@ -11,6 +11,6 @@ title: "eclipse 常用"
 </xmp>
 <xmp class="my_xmp_class"><!--默认大小，格式化文本标签-->
 </xmp>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;"><!--可改变大小的格式化文本-->
+<xmp style="color: red; font-size: 14px;" class="my_xmp_class"><!--可改变大小、颜色的格式化文本-->
 </xmp>
 ![向导](/images/DDXDDV/向导.jpg)<br><!--图片，绝对地址-->
