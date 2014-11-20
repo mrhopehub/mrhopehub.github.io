@@ -4,7 +4,7 @@ title: "修改Host，让Chrome快速同步书签"
 ---
 
 # {{ page.title }}
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 不少Chrome用户反应，Chrome的同步功能越来越不给力了，平均要花费10多分钟来同步，有时候的有些地区的用户还直接同步不了。
 我就单独计算过，在云南大理的网络，一个全新的操作系统，一个全新的稳定版Chrome，我同步Chrome一共花了18分钟。
 所以，同步是非常非常麻烦的，至于原因我在这里就不多说了，在这里我们使用修改Hosts的方法来解决这个问题。

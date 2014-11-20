@@ -4,7 +4,7 @@ title: "createTrackbar与printf的比较(与最简单的函数比较，方便记
 ---
 
 # {{ page.title }}
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 int cvCreateTrackbar(const char*trackbar_name, const char* window_name, int* value, int count,CvTrackbarCallbackon_change=NULL);
 
 printf("this is int printf %d",n);

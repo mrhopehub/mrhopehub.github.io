@@ -4,7 +4,7 @@ title: "ubuntu下JDK安装方法总结"
 ---
 
 # {{ page.title }}
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 .bin安装方法
 1)首先，在Oracle的官网上下载JDK。
 http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html

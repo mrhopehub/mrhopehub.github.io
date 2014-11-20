@@ -4,7 +4,7 @@ title: "opencv之通道的分离(split)与合并(merge)"
 ---
 
 # {{ page.title }})
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 分离、合并通道
 
 分离通道：
