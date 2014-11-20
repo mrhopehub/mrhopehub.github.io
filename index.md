@@ -3,7 +3,7 @@ layout: index
 title: general code is good code
 ---
 # {{ page.title }}
-###### 文章列表
+## 文章列表
 
 <ul>
     {% for post in site.posts %}
