@@ -33,6 +33,7 @@ title: "MFC CAsyncSocket demo(客户端)"
 <font color="red">添加了MySocket类之后，整个工程的类框架搭建完毕，下一步要做的就是修改这些类，满足工程需要。</font><br>
 
 1. 修改CMFCCAsyncSocketdemoDlg类定义（重点在h文件的修改,对应的cpp文件并没有太多的修改）
+
 >* 添加控件变量
 <xmp class="prettyprint linenums">
 private:
@@ -44,6 +45,7 @@ private:
 </xmp>
 >注意是私有、Control类型变量<br>
 >![dialog变量](/images/socket demo/dialog变量.jpg)<br>
+
 >*  添加普通变量<br>
 <xmp class="prettyprint linenums">
     MySocket m_socket;
@@ -52,6 +54,7 @@ private:
 	int m_port;
 </xmp>
 >不要忘记包含MySocket.h，另外注意是私有变量。<br>
+
 >* 添加处理socket的public方法
 <xmp class="prettyprint linenums">
     void OnReceive();
@@ -60,6 +63,7 @@ private:
 </xmp>
 
 2. 修改MySocket类定义（同样重点在h文件的修改,对应的cpp文件并没有太多的修改）<br>
+
 >* 添加private成员变量
 <xmp class="prettyprint linenums">
 private:
