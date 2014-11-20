@@ -29,10 +29,10 @@ title: "MFC CAsyncSocket demo(客户端)"
 2. 添加重载函数,还是类视图，右击“MySocket”类-->类向导，分别选择OnAccept、OnConnect、OnClose、OnReceive、OnSend、OnOutOfBandData，添加到已重写的虚函数。<font color="red">这一步虽然添加了六个函数，但是不是所有的函数都要做实质性的重载。</font><br>
 ![class wizard](/images/socket demo/class wizard.jpg)<br>
 
-## <font color="blue">修改类</font>
+## <font color="blue">修改类定义</font>
 <font color="red">添加了MySocket类之后，整个工程的类框架搭建完毕，下一步要做的就是修改这些类，满足工程需要。</font><br>
 
-1. 修改CMFCCAsyncSocketdemoDlg类定义（重点在h文件的修改,对应的cpp文件并没有太多的修改）
+### 修改CMFCCAsyncSocketdemoDlg类定义（重点在h文件的修改,对应的cpp文件并没有太多的修改）
 
 >* 添加控件变量
 <xmp class="prettyprint linenums">
@@ -62,7 +62,7 @@ private:
 	void OnConnect();
 </xmp>
 
-2. 修改MySocket类定义（同样重点在h文件的修改,对应的cpp文件并没有太多的修改）<br>
+### 修改MySocket类定义（同样重点在h文件的修改,对应的cpp文件并没有太多的修改）<br>
 
 >* 添加private成员变量
 <xmp class="prettyprint linenums">
