@@ -3,8 +3,9 @@ layout: posts
 title: "2.5　内核中的并发"
 ---
 
+
+# {{ title }}
 http://book.51cto.com/art/201006/207259.htm
-# 2.5　内核中的并发
 随着多核笔记本电脑时代的到来，对称多处理器（SMP）的使用不再被限于高科技用户。SMP和内核抢占是多线程执行的两种场景。多个线程能够同时操作共享的内核数据结构，因此，对这些数据结构的访问必须被串行化。
 
 接下来，我们会讨论并发访问情况下保护共享内核资源的基本概念。我们以一个简单的例子开始，并逐步引入中断、内核抢占和SMP等复杂概念。
@@ -64,7 +65,7 @@ mutex_unlock(&mymutex);      /* Release the mutex */
 
 (4) 可抢占内核，SMP情况下存在于进程和中断上下文的临界区。
 
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 旧的信号量接口
 
 互斥体接口代替了旧的信号量接口（semaphore）。互斥体接口是从-rt树演化而来的，在2.6.16内核中被融入主线内核。
@@ -163,7 +164,7 @@ spin_lock(&mylock);
 spin_unlock(&mylock); 
 </xmp>
 除了有irq变体以外，自旋锁也有底半部（BH）变体。在锁被获取的时候，spin_lock_bh()会禁止底半部，而spin_unlock_bh()则会在锁被释放时重新使能底半部。我们将在第4章讨论底半部。
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 -rt树
 
 实时（-rt）树，也被称作CONFIG_PREEMPT_RT补丁集，实现了内核中一些针对低延时的修改。该补丁集可以从www.kernel.org/pub/linux/kernel/projects/rt下载，它允许内核的大部分位置可被抢占，但是用互斥体代替了一些自旋锁。它也合并了一些高精度的定时器。数个-rt功能已经被融入了主线内核。详细的文档见http://rt.wiki.kernel.org/。
