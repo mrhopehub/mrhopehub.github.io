@@ -5,7 +5,7 @@ title: "MFC CAsyncSocket demo(客户端)"
 
 # MFC CAsyncSocket demo(客户端)
 手把手式，学习MFC创建类的过程、CAsyncSocket、面向对象思想。
-### <font color="blue">创建支持Windows套接字的MFC工程</font>
+## <font color="blue">创建支持Windows套接字的MFC工程</font>
 
 1. 创建MFC工程，工程名：MFC CAsyncSocket demo<br>
 ![mfc](/images/socket demo/wizard mfc.jpg)<br>
@@ -14,14 +14,14 @@ title: "MFC CAsyncSocket demo(客户端)"
 3. 添加windows套接字支持<br>
 ![socket](/images/socket demo/wizard socket.jpg)<br>
 
-### <font color="blue">UI界面</font>
+## <font color="blue">UI界面</font>
 
 1. 删除"TODO: 在此放置对话框控件。"这个控件
 2. 添加控件、修改Caption属性、修改布局<br>
 ![ui](/images/socket demo/ui.jpg)<br>
 3. 设置控件其他属性，主要是提示消息文本框的可换行，Want Return、Multiline两个属性设置为True
 
-### <font color="blue">添加CAsyncSocket子类</font>
+## <font color="blue">添加CAsyncSocket子类</font>
 
 1. 切换到类试图，右击“MFC CAsyncSocket demo”-->添加类-->MFC 类,选择基类CAsyncSocket、填写类名MySocket<br>
 ![class view](/images/socket demo/class view.jpg)<br>
@@ -29,7 +29,7 @@ title: "MFC CAsyncSocket demo(客户端)"
 2. 添加重载函数,还是类视图，右击“MySocket”类-->类向导，分别选择OnAccept、OnConnect、OnClose、OnReceive、OnSend、OnOutOfBandData，添加到已重写的虚函数。<font color="red">这一步虽然添加了六个函数，但是不是所有的函数都要做实质性的重载。</font><br>
 ![class wizard](/images/socket demo/class wizard.jpg)<br>
 
-### <font color="blue">修改类</font>
+## <font color="blue">修改类</font>
 <font color="red">添加了MySocket类之后，整个工程的类框架搭建完毕，下一步要做的就是修改这些类，满足工程需要。</font><br>
 
 1. 修改CMFCCAsyncSocketdemoDlg类定义（重点在h文件的修改,对应的cpp文件并没有太多的修改）
@@ -74,7 +74,7 @@ private:
     void set_dialog(CDialogEx *dialog);
 </xmp>
 
-3. 实现MySocket类
+## 实现MySocket类
 >MySocket.cpp包含MFC CAsyncSocket demoDlg.h<br>
 
 >* OnClose函数
@@ -121,7 +121,7 @@ void MySocket::set_dialog(CDialogEx *dialog)
 }
 </xmp>
 
-4. 实现CMFCCAsyncSocketdemoDlg类
+## 实现CMFCCAsyncSocketdemoDlg类
 
 >* OnInitDialog函数
 <xmp class="prettyprint linenums">
