@@ -77,7 +77,7 @@ java -version
 Oracle JDK7本身并不存在于该PPA中，这是因为新的Java授权许可证并不允许这么做（这也是Oracle JDK7从ubuntu官方软件仓库中移除的原因）。PPA中的软件程序自动从Oracle官方网站下载Oracle Java JDK7并把它安装到你的电脑中，就像flashplugin-installer软件包那样。
 需要注意的是，该软件包当前还是alpha版本，可能在有些情况下不能正常工作！该软件包支持代理，但是如果你的ISP或者路由器封禁了一些非标准端口，这可能导致安装失败，这是由于Oracle在Java7二进制安装包的下载链接中使用了许多重定向！如果因此而导致下载失败，亦或你的电脑在防火墙保护之下，你就需要手动安装 Oracle Java 7了。
 
-### 安装Oracle Java 7
+安装Oracle Java 7
 该软件包提供安装Oracle Java JDK 7 (包括 Java JDK, JRE 和 the Java 浏览器插件)，如果你只需要安装Oracle JRE，请不要使用该PPA。
 运行下述命令，即可完成添加PPA、安装最新版本的Oracle Java 7（支持Ubuntu 12.04, 11.10, 11.04 and 10.04）:
  
@@ -85,7 +85,7 @@ Oracle JDK7本身并不存在于该PPA中，这是因为新的Java授权许可�
 2 sudo apt-get update
 3 sudo apt-get install oracle-java7-installer	 
 
-### 安装完成之后，如果你想看看是否真的安装成功了，你只需运行下面的命令：
+安装完成之后，如果你想看看是否真的安装成功了，你只需运行下面的命令：
  
 1	java -version	 
 命令输出应该包含和下面类似的内容：

@@ -3,7 +3,8 @@ layout: posts
 title: "关于嵌入式系统的移植"
 ---
 
-转载：http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331
+# {{ page.title }}
+转载：[http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331](http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331)
 ## 简介
 无论是bootloader的移植还是linux的移植，都要明白那些工作已经做好了、那些工作还没有做。主要分为两部分：<font color="red">架构部分、板级部分。</font>
 ## <font color="blue">架构部分</font>
