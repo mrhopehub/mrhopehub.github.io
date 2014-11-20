@@ -11,7 +11,7 @@ likely()与unlikely()在2.6内核中，随处可见，那为什么要用它们�
 
 也就是说likely()和unlikely()从阅读和理解的角度是一样的。<br>
 这两个宏在内核中定义如下：
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 <linux/compiler>
 require_once 'Zend/Uri/Exception.php';
 require_once 'Zend/Uri/Http.php';
@@ -46,7 +46,7 @@ description';
       }
   }
 }
-</xmp>
+</pre>
 这里的\_\_built\_expect()函数是gcc(version >= 2.96)的内建函数,提供给程序员使用的，目的是将"分支转移"的信息提供给编译器，这样编译器对代码进行优化，以减少指令跳转带来的性能下降。<br>
 \_\_buildin\_expect((x), 1)表示x的值为真的可能性更大.<br>
 \_\_buildin\expect((x), 0)表示x的值为假的可能性更大.<br>
