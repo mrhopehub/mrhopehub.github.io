@@ -4,8 +4,8 @@ title: "ubuntu下JDK安装方法总结"
 ---
 
 # {{ page.title }}
+## .bin安装方法
 <xmp class="my_xmp_class">
-.bin安装方法
 1)首先，在Oracle的官网上下载JDK。
 http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u31-download-1501634.html
 这里下载的是jdk-6u31-linux-i586.bin。
@@ -39,8 +39,9 @@ sudo update-alternatives --install /usr/bin/javac javac /home/gg/jdk1.6.0_33/bin
 8)验证默认java版本 java -version
 
 PS：6、7两步在只有一个java版本的时候不需要
-
-.tar.gz安装方法
+</xmp>
+## .tar.gz安装方法
+<xmp class="my_xmp_class">
 如果你现在去Oracle官网去看一下的话，会发现都变成.tar.gz的压缩文件了
 
 1. 首先你需要到oracle官网下载最新版本的JDK。跑到oracle官网，自己到Download下面找找吧
@@ -70,8 +71,9 @@ source ~/.bashrc或者source /etc/.environment（要与前面对应）
 java -version
 查看版本号
 当系统中如果还安装有其他的jdk版本还要修改默认版本
-
-JDK还有其他安装方法，如PPA
+<xmp>
+## JDK还有其他安装方法，如PPA
+<xmp class="my_xmp_class">
 在ubuntu系统中，和OpenJDK比起来，如果你更偏爱Oracle JDK（前 Sun JDK），我推荐一种很简便的方法给你。通过一个PPA仓库，你可以很容易的进行安装Oracle JDK（包括JRE）并始终保持最新的版本。
 Oracle JDK7本身并不存在于该PPA中，这是因为新的Java授权许可证并不允许这么做（这也是Oracle JDK7从ubuntu官方软件仓库中移除的原因）。PPA中的软件程序自动从Oracle官方网站下载Oracle Java JDK7并把它安装到你的电脑中，就像flashplugin-installer软件包那样。
 需要注意的是，该软件包当前还是alpha版本，可能在有些情况下不能正常工作！该软件包支持代理，但是如果你的ISP或者路由器封禁了一些非标准端口，这可能导致安装失败，这是由于Oracle在Java7二进制安装包的下载链接中使用了许多重定向！如果因此而导致下载失败，亦或你的电脑在防火墙保护之下，你就需要手动安装 Oracle Java 7了。
