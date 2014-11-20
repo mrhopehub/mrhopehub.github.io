@@ -4,7 +4,7 @@ title: "bios、dts、uboot"
 ---
 
 # {{ page.title }}
-转载：http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331
+转载：[http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331](http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331)
 <xmp class="my_xmp_class">
 win98启动过程详解
  (一)、BIOS的启动过程 
