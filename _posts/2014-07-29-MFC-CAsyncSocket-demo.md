@@ -121,6 +121,7 @@ void MySocket::set_dialog(CDialogEx *dialog)
 </xmp>
 
 4. 实现CMFCCAsyncSocketdemoDlg类
+
 >* OnInitDialog函数
 <xmp class="prettyprint linenums">
     // TODO: 在此添加额外的初始化代码
