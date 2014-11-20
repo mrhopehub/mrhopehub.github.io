@@ -41,7 +41,6 @@ sudo update-alternatives --install /usr/bin/javac javac /home/gg/jdk1.6.0_33/bin
 PS：6、7两步在只有一个java版本的时候不需要
 </xmp>
 ## .tar.gz安装方法
-<xmp class="my_xmp_class">
 如果你现在去Oracle官网去看一下的话，会发现都变成.tar.gz的压缩文件了
 
 1. 首先你需要到oracle官网下载最新版本的JDK。跑到oracle官网，自己到Download下面找找吧
@@ -71,7 +70,7 @@ source ~/.bashrc或者source /etc/.environment（要与前面对应）
 java -version
 查看版本号
 当系统中如果还安装有其他的jdk版本还要修改默认版本
-<xmp>
+
 ## JDK还有其他安装方法，如PPA
 <xmp class="my_xmp_class">
 在ubuntu系统中，和OpenJDK比起来，如果你更偏爱Oracle JDK（前 Sun JDK），我推荐一种很简便的方法给你。通过一个PPA仓库，你可以很容易的进行安装Oracle JDK（包括JRE）并始终保持最新的版本。
