@@ -3,6 +3,7 @@ layout: posts
 title: "Markdown 语法"
 ---
 
+# {{ page.title }}
 ## Phrase Emphasis ##
 
 	*italic*   **bold**
