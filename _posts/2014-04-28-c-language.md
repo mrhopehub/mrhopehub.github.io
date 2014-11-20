@@ -3,10 +3,10 @@ layout: posts
 title: "理解C中的声明"
 ---
 
-# 理解C中的声明
+# {{ page.title }}
 A    <font color="red">从声明中找出","，</font>如果存在","，则说明涉及到函数，因为只有函数的声明中存在","（当然了，除了像char a,b,c;这样的声明情况）；<br>
 B    假如有","的话，<font color="red">","两边的是函数参数。</font><br>
-### C    找出剩下的<font color="red">非函数参数</font><font size="10">的</font><font color="red">非关键字</font>,从这里开始分析。<br>
+## C    找出剩下的<font color="red">非函数参数</font><font size="10">的</font><font color="red">非关键字</font>,从这里开始分析。<br>
 D    优先级从高到低
 <blockquote>
     	D1	声明中被括号括起来的那部分<br>
@@ -37,7 +37,7 @@ int sum(int sum1,int sum2)
 }
 </xmp>
 <br><br>
-# 划清指针与数组的界限
+## 划清指针与数组的界限
 指针默认没有维数<br>
 <font color="blue">数组名是嵌套与维相结合的指针</font><br>
 <blockquote>
