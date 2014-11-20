@@ -3,7 +3,7 @@ layout: posts
 title: "常用计算机英语（不定期更新）"
 ---
 
-# 常用计算机英语（不定期更新）
+# {{ page.title }}
 
 * Legacy Applications：Legacy本身是遗产的意思，在这里跟Applications结合表示“传统应用程序”的意思
 * Legend：<br>

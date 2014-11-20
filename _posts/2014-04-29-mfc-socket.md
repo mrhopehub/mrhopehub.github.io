@@ -3,7 +3,7 @@ layout: posts
 title: "MFC之socket编程总结：面向对象"
 ---
 
-# MFC之socket编程总结：面向对象
+# {{ page.title }}
 <img src="/images/mfc-socket/note1.jpg" width="800">
 <img src="/images/mfc-socket/note2.jpg" width="800">
 <img src="/images/mfc-socket/note3.jpg" width="800">

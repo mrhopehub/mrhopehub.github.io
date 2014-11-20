@@ -3,9 +3,9 @@ layout: posts
 title: "bios、dts、uboot"
 ---
 
+# {{ page.title }}
 转载：http://course1.scetc.net/wjzz/dispArticle.Asp?ID=331
-# bios、dts、uboot
-<xmp style="white-space: pre-wrap; word-wrap: break-word;">
+<xmp class="my_xmp_class">
 win98启动过程详解
  (一)、BIOS的启动过程 
 只要一打开计算机的电源开关，一个叫Bootstrap(引导程序)的小软件就要发挥作用，它常驻在BIOS ROM的地址FFFFOH处,当ROM加载程序加载它后，它就完成下面的几项工作。
