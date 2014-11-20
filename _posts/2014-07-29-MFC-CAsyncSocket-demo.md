@@ -75,7 +75,8 @@ private:
 </xmp>
 
 3. 实现MySocket类
->MySocket.cpp包含MFC CAsyncSocket demoDlg.h
+>MySocket.cpp包含MFC CAsyncSocket demoDlg.h<br>
+
 >* OnClose函数
 <xmp class="prettyprint linenums">
 void MySocket::OnClose(int nErrorCode)
