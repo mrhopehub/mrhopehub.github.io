@@ -9,7 +9,7 @@ title: "windows窗口与面向对象"
 ### <font color="blue">修改资源文件、窗口外观</font>
 
 1. Resource.h添加
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 #define IDM_ADD            	110
 #define IDM_SUB				111
 #define IDM_MULT			112
@@ -22,7 +22,7 @@ title: "windows窗口与面向对象"
 如图：<br>
 ![ID](/images/windows and oo/id.jpg)<br>
 2. 右键(“Your Project Name”).rc-->查看代码,IDC_CALC MENU下添加
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 	POPUP "计算(&O)"
 	BEGIN
 	MENUITEM "Add"							IDM_ADD
@@ -34,11 +34,11 @@ title: "windows窗口与面向对象"
 如图：<br>
 ![MENU](/images/windows and oo/menu.jpg)<br>
 3. (“Your Project Name”).cpp中<br><font color="blue">MyRegisterClass()修改窗口背景颜色</font>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 </xmp>
 <font color="blue">MyRegisterClass()修改窗口大小、样式</font>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
     hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
 		CW_USEDEFAULT, 0, 200, 200, NULL, NULL, hInstance, NULL);
 </xmp>
@@ -46,7 +46,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 ### <font color="blue">向窗口中添加控件((“Your Project Name”).cpp)</font>
 
 1. 添加WM_CREATE消息处理
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
     case WM_CREATE:
 		CreateWindowEx(WS_EX_CLIENTEDGE, TEXT("EDIT"), TEXT("0"),
 			WS_CHILD|WS_VISIBLE|ES_AUTOHSCROLL|WS_TABSTOP,
@@ -63,7 +63,7 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 		break;
 </xmp><br>
 2. 绘制分割线,修改WM_PAINT消息处理
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
     	MoveToEx(hdc, 10, 78, NULL);
 		LineTo(hdc, 115, 78);
 </xmp>
@@ -73,14 +73,14 @@ wcex.hbrBackground = CreateSolidBrush(RGB(180, 180, 180));
 ### <font color="blue">添加相应函数((“Your Project Name”).cpp)</font>
 
 1. 添加全局变量
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 enum operation {ADD,SUB,MULT,REM};
 operation op = ADD;
 </xmp>
 如图<br>
 ![op](/images/windows and oo/op.jpg)<br>
 2. 添加菜单处理函数
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
     	case IDM_ADD:
 			SetDlgItemText(hWnd, IDC_OPBUTTON, TEXT("+"));
 			op = ADD;
@@ -101,7 +101,7 @@ operation op = ADD;
 如图:<br>
 ![wm_menu](/images/windows and oo/wm_menu.jpg)<br>
 3. 添加运算按钮处理函数,不要忘了case下的第一层大括号
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
     	case IDC_OPBUTTON:
 			{
 				BOOL success = false;
@@ -156,7 +156,7 @@ windows平台的窗口虽然已经有了面向对象的思想，而且把窗口�
 4. MFC中的窗口，只有顶层的窗口可以添加传统的数值型的成员变量，其子控件的获取也可以通过1、2、3方法得到，<font color="red">当然也可以通过DDX机制实现，而DDX又分为DDX_Control、DDX_Text，DDX_Text还是没有纯OO的思想，而DDX_Control体现了纯OO对象。</font>
 5. 多窗口应用程序中顶层窗口可以有数值型的成员变量，而且可以通过对象访问。
 6. <font color="red">所以往往是OP的接口+OO的思想，如GetWindowText，OP的接口，而HWND hWnd貌似OO单也不算是对象（对象的索引），</font>再如
-><pre class="prettyprint linenums">
+><xmp class="prettyprint linenums">
 extern DECLSPEC int SDLCALL SDL_RenderCopyEx(SDL_Renderer * renderer,
                                            SDL_Texture * texture,
                                            const SDL_Rect * srcrect,

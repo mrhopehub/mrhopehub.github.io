@@ -15,7 +15,7 @@ These steps are done in context_switch(), switch_to() and __switch_to(). switch_
  
 Here is the source code of switch_to():
 </xmp>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 /* 
 * Saving eflags is important. It switches not only IOPL between tasks, 
 * it also protects other tasks from NT leaking through sysenter etc. 
@@ -78,7 +78,7 @@ This piece of code is so excellent and well designed, and the functionalities ar
 ### 哲理性理解
 如前所述，对于每个硬件处理器，仅通过检查栈就可以获得当前正确的进程。早先的Linux版本没有把内核栈与进程描述符放在一起，而是强制引入全局静态变量current来标示正在运行进程的描述符。在多处理器系统上，有必要把current定义为一个数组，每一个元素对应一个可用CPU。<br>
 上面这段话总结一下就是，esp代表当前进程。所以esp的切换就是进程的切换，Linux内核进程切换正是这样实现的。如下：<br>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
 上面这条命令作用是把next->thread.esp装入esp。即进行esp切换，之后的指令已经是在next进程，只不过还要进行硬件上下文的切换（之前的版本由控制器自动实现），所以可以把堆栈切换之后的指令，看做next进程（代替控制器）去完成硬件上下文的切换（因为next进程在内核态，所以可以访问prev与next进程，从而去保存prev进程硬件上下文，恢复自己的硬件上下文），可以从另一个角度看：内核代码运行在prev或者next进程上来实现对prev、next进程的管理(也就是说：内核代码在堆栈切换之前运行在prev进程，之后运行在next进程，但并不看做是prev、next进程在运行，而是内核代码在运行)。<br><br>
@@ -90,7 +90,7 @@ movl %[next_sp],%%esp
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 1.如果next是新进程，虽然
 </xmp>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
@@ -100,7 +100,7 @@ movl %[next_sp],%%esp
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
 2.如果next进程不是新进程（next进程被switch_to过），虽然
 </xmp>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
 <xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
@@ -109,7 +109,7 @@ movl %[next_sp],%%esp
 3.综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。
 </xmp>
 switch_to宏化简一下就是：
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 	//参照《深入理解linux内核》第三版P111
 	movl prev,%eax
 	movl next,%edx

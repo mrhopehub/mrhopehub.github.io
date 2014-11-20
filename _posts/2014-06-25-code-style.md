@@ -8,7 +8,7 @@ title: "编码风格示例"
 2. float get_rand(float left, float right)函数，TODO标签的使用
 
 ### <font color="blue">随机整数</font>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
@@ -60,7 +60,7 @@ int get_rand(int left, int right) {
 
 </xmp>
 ### <font color="blue">随机浮点数</font>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>

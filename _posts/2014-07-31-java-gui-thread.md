@@ -15,7 +15,7 @@ Swing图型界面多线程编程过程中的一些误区<br>
 3. 不要以为invokeLater的意思是当前线程执行完再执行目标线程；以为invokeAndWait的意思是等待目标线程执行完再执行当前线程，实际上压根就不是那么回事
 
 问题代码1：大意是在按下某个按钮的时候调用一个远程服务
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 JButton button = new JButton();   
     button.addActionListener(new ActionListener() {   
         @Override  
@@ -29,7 +29,7 @@ JButton button = new JButton();
 以上是误解造成的，了解这个过程，就很容易看出上面这段代码的问题是什么原因了。解决的方法也倒比较简单，直接new Thread().start();就可以保证EventDispatchThread执行到当前方法的时候快速返回，以便可以去响应来自用户界面的其他事件。<br>
 <br>
 问题代码2：大意是在按下某个按钮的时候调用一个远程服务，同时处理其他事情
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 JButton button = new JButton();   
 button.addActionListener(new ActionListener() {   
     @Override  
@@ -46,7 +46,7 @@ button.addActionListener(new ActionListener() {
 });
 </xmp>
 这段代码跟第一段代码唯一的差别是doOtherThing()在invokeRemoteService ()完成之前就能够得到执行，所以造成了invokeRemoteService ()/doOtherThing()好像是在两个线程里执行的假象。实际上invokeLater是把目标代码打包成一个Event提交到EventQueue去了，等到EventDispatchThread线程执行完当前代码段的doOtherThing()后，再去执行这个EventQueue中的Event，这时候就会执行到这个invokeRemoteService ()方法。但是，实际上这两个方法都是在EventDispatchThread中执行的，并没有任何其他Thread来执行。于是，问题1的问题还是没解决。实际上直接new Thread().start()方法就可以了，使用SwingUtilities完全是由于误解造成的滥用。测试方法，在位置A和位置B都加上下面这行代码：<br>
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 System.out.println(Thread.currentThread().getId() + Thread.currentThread().getName());
 </xmp>
 返回的结果都是一样的：<br>
