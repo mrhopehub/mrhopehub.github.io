@@ -11,42 +11,11 @@ likely()与unlikely()在2.6内核中，随处可见，那为什么要用它们�
 
 也就是说likely()和unlikely()从阅读和理解的角度是一样的。<br>
 这两个宏在内核中定义如下：
-<pre class="prettyprint linenums">
+<xmp class="prettyprint linenums">
 <linux/compiler>
-require_once 'Zend/Uri/Exception.php';
-require_once 'Zend/Uri/Http.php';
-require_once 'Zend/Uri/Mailto.php';
-
-abstract class Zend_Uri
-{
-
-  /**
-   * Return a string representation of this URI.
-   *
-   * @see     getUri()
-   * @return  string
-   */
-  public function __toString()
-  {
-      return $this-&gt;getUri();
-  }
-
-  static public function factory($uri = 'http')
-  {
-      $uri = explode(':', $uri, 2);
-      $scheme = strtolower($uri[0]);
-      $description = 'long
-description';
-      $schemeSpecific = isset($uri[1]) ? $uri[1] : '';
-
-      // Security check: $scheme is used to load a class file,
-      // so only alphanumerics are allowed.
-      if (!ctype_alnum($scheme)) {
-          throw new Zend_Uri_Exception('Illegal scheme');
-      }
-  }
-}
-</pre>
+#define likely(x) __builtin_expect(!!(x), 1)
+#define unlikely(x) __builtin_expect(!!(x), 0)
+</xmp>
 这里的\_\_built\_expect()函数是gcc(version >= 2.96)的内建函数,提供给程序员使用的，目的是将"分支转移"的信息提供给编译器，这样编译器对代码进行优化，以减少指令跳转带来的性能下降。<br>
 \_\_buildin\_expect((x), 1)表示x的值为真的可能性更大.<br>
 \_\_buildin\expect((x), 0)表示x的值为假的可能性更大.<br>
