@@ -4,7 +4,7 @@ title: "Process Context Switch in Linux Kernel"
 ---
 
 ### Process Context Switch in Linux Kernel
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 Basic call path of process scheduling in Linux  (start from kernel/sched.c):
     schedule()->context_switch()->switch_to()->__switch_to()
  
@@ -68,7 +68,7 @@ do {                                    \
             "memory");                    \  
 } while (0)
 </xmp>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 We can see 3 things are done in function switch_to(): 
 	1.switch %esp
 	2.hardware context switch (__switch_to())
@@ -83,27 +83,27 @@ movl %[next_sp],%%esp
 </xmp>
 上面这条命令作用是把next->thread.esp装入esp。即进行esp切换，之后的指令已经是在next进程，只不过还要进行硬件上下文的切换（之前的版本由控制器自动实现），所以可以把堆栈切换之后的指令，看做next进程（代替控制器）去完成硬件上下文的切换（因为next进程在内核态，所以可以访问prev与next进程，从而去保存prev进程硬件上下文，恢复自己的硬件上下文），可以从另一个角度看：内核代码运行在prev或者next进程上来实现对prev、next进程的管理(也就是说：内核代码在堆栈切换之前运行在prev进程，之后运行在next进程，但并不看做是prev、next进程在运行，而是内核代码在运行)。<br><br>
 ### 为什么不化简成call __switch_to
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 这里，如果之前B也被switch_to出去过，那么[next_ip]里存的就是下面这个1f的标号，但如果进程B刚刚被创建，之前没有被switch_to出去过，那么[next_ip]里存的将是ret_ftom_fork（参看copy_thread()函数）。这就是这里为什么不用call __switch_to而用jmp，因为call会导致自动把下面这句话的地址(也就是1:)压栈，然后__switch_to()就必然只能ret到这里，而无法根据需要ret到ret_from_fork。
 </xmp>
 ### next是否是新进程（没有switch_to过的进程，如fork出的子进程）
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 1.如果next是新进程，虽然
 </xmp>
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 之后是在next进程上运行，但是并不是next进程（新进程）的真正开始点，而ret_ftom_fork才新进程的开始点。
 </xmp>
 <font color="red" size="3">要注意一句话，当处理器切换到某个进程时，不必是上次切换出去时的下一条指令，也就是说切换到next进程时并不一定要运行ret_ftom_fork，而是要继续做一下切换的后续管理工作（硬件上下文的保存、恢复），之后再跳转到ret_ftom_fork（也就是\_\_switch\_to函数返回）。总结一下就是切换到next进程（堆栈切换）时并没有完成完全的切换工作，需要恢复硬件上下文之后，才是完全的切换了进程。</font>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 2.如果next进程不是新进程（next进程被switch_to过），虽然
 </xmp>
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
-<xmp style="white-space: pre-wrap; word-wrap: break-word; font-size: 14px;">
+<xmp class="my_xmp_class">
 之后是的真正开始点，但是此时硬件上下文还不是next进程的。__switch_to进行硬件上下文恢复之后才算是完全恢复next进程。
 
 3.综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。

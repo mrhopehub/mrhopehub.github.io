@@ -3,8 +3,8 @@ layout: posts
 title: "Git 少用 Pull 多用 Fetch 和 Merge"
 ---
 
-原文地址：[http://www.oschina.net/translate/git-fetch-and-merge](http://www.oschina.net/translate/git-fetch-and-merge)
 # Git 少用 Pull 多用 Fetch 和 Merge
+原文地址：[http://www.oschina.net/translate/git-fetch-and-merge](http://www.oschina.net/translate/git-fetch-and-merge)
 <div class="TextContent">
 <p> 本文有点长而且有点乱，但就像<em>Mark Twain&nbsp;<a href="http://en.wikiquote.org/wiki/Blaise_Pascal" rel="nofollow">Blaise Pascal</a>的</em>笑话里说的那样：我没有时间让它更短些。在Git的邮件列表里有很多<a href="http://thread.gmane.org/gmane.comp.version-control.git/116903/" target="_blank" rel="nofollow">关于本文的讨论</a>，我会尽量把其中相关的观点列在下面。 </p> 
 <p> 我最常说的关于git使用的一个经验就是： </p> 

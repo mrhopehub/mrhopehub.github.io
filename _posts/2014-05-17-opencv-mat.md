@@ -3,7 +3,7 @@ layout: posts
 title: "编程最基本的问题之数据访问"
 ---
 
-# 编程最基本的问题之数据访问
+# {{ page.title }}
 ## <font color="blue">背景</font>
 最开始学习opencv的时候没太注意对基本的图像容器Mat，直到后来每次涉及到最基本的问题时总要没有思路的回过头来看，比如最简单的定义一个图像、访问图像的某个像素，所以这里稍微总结一下。
 ## <font color="blue">Mat定义</font>
