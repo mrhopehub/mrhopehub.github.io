@@ -34,7 +34,7 @@ title: "MFC CAsyncSocket demo(客户端)"
 
 1. 修改CMFCCAsyncSocketdemoDlg类定义（重点在h文件的修改,对应的cpp文件并没有太多的修改）
 >* 添加控件变量
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 private:
     CIPAddressCtrl m_ipcontrol;
 	CEdit m_portcontrol;
@@ -45,7 +45,7 @@ private:
 >注意是私有、Control类型变量<br>
 >![dialog变量](/images/socket demo/dialog变量.jpg)<br>
 >*  添加普通变量<br>
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
     MySocket m_socket;
 	CString	m_recieveddata;
 	CString m_address;
@@ -53,7 +53,7 @@ private:
 </xmp>
 >不要忘记包含MySocket.h，另外注意是私有变量。<br>
 >* 添加处理socket的public方法
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
     void OnReceive();
 	void OnClose();
 	void OnConnect();
@@ -61,19 +61,19 @@ private:
 
 2. 修改MySocket类定义（同样重点在h文件的修改,对应的cpp文件并没有太多的修改）<br>
 >* 添加private成员变量
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 private:
     CDialogEx *m_dialog;
 </xmp>
 >* 添加public成员函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
     void set_dialog(CDialogEx *dialog);
 </xmp>
 
 3. 实现MySocket类
 >MySocket.cpp包含MFC CAsyncSocket demoDlg.h
 >* OnClose函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void MySocket::OnClose(int nErrorCode)
 {
     // TODO: 在此添加专用代码和/或调用基类
@@ -85,7 +85,7 @@ void MySocket::OnClose(int nErrorCode)
 }
 </xmp>
 >* OnConnect函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void MySocket::OnConnect(int nErrorCode)
 {
     // TODO: 在此添加专用代码和/或调用基类
@@ -97,7 +97,7 @@ void MySocket::OnConnect(int nErrorCode)
 }
 </xmp>
 >* OnReceive函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void MySocket::OnReceive(int nErrorCode)
 {
     // TODO: 在此添加专用代码和/或调用基类
@@ -109,7 +109,7 @@ void MySocket::OnReceive(int nErrorCode)
 }
 </xmp>
 >* set_dialog函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void MySocket::set_dialog(CDialogEx *dialog)
 {
     this->m_dialog = dialog;
@@ -118,7 +118,7 @@ void MySocket::set_dialog(CDialogEx *dialog)
 
 4. 实现CMFCCAsyncSocketdemoDlg类
 >* OnInitDialog函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
     // TODO: 在此添加额外的初始化代码
 	this->m_socket.set_dialog(this);
 	//按钮相关设置
@@ -135,7 +135,7 @@ void MySocket::set_dialog(CDialogEx *dialog)
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 </xmp>
 >* OnReceive函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnReceive()
 {
     char *pBuf = new char [1025];
@@ -157,7 +157,7 @@ void CMFCCAsyncSocketdemoDlg::OnReceive()
 }
 </xmp>
 >* OnConnect函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnConnect()
 {
     this->m_recieveddata.Insert(this->m_recieveddata.GetLength(),_T("连接服务器成功!\r\n"));
@@ -167,7 +167,7 @@ void CMFCCAsyncSocketdemoDlg::OnConnect()
 }
 </xmp>
 >* OnClose函数<font color="red">实际上完全可以调用OnBnClickedButton2函数（不需要提示“服务器主动断开连接”情况下），</font>
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnClose()
 {
     this->m_socket.Close();
@@ -178,7 +178,7 @@ void CMFCCAsyncSocketdemoDlg::OnClose()
 }
 </xmp>
 >* “连接服务器”按钮响应函数,<font color="red">注意dwAddress与m_address的转换，CString与int的转换，另外m_socket.Create();是不可缺少的</font>
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnBnClickedButton1()
 {
     // TODO: 在此添加控件通知处理程序代码
@@ -198,7 +198,7 @@ void CMFCCAsyncSocketdemoDlg::OnBnClickedButton1()
 }
 </xmp>
 >* “断开服务器”按钮响应函数
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 void CMFCCAsyncSocketdemoDlg::OnBnClickedButton2()
 {
     // TODO: 在此添加控件通知处理程序代码

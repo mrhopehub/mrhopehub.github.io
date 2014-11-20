@@ -19,7 +19,7 @@ ffmpeg抽取视频中motion vector的小结，
 可见有很多错误，其中需要修改的是：
 
 1. 注释掉
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 #include <stdbool.h>
 </xmp>
 2. 添加extern "C"相关
@@ -36,7 +36,7 @@ ffmpeg抽取视频中motion vector的小结，
 4. 总是在if (!USES_LIST(pict->mb_type[mb_index], direction))这个地方中断，网上找了几天的原因也没解决，主要的思路就是<br><font color="red">pCodecCtx->debug |= FF_DEBUG_MV | FF_DEBUG_MB_TYPE;</font><br><font color="red">pCodecCtx->debug_mv |= FF_DEBUG_VIS_MV_P_FOR | FF_DEBUG_VIS_MV_B_FOR | FF_DEBUG_VIS_MV_B_BACK;</font>但是同样的问题，不过确实出现了visual motion vector，但是还是中断在那个位置，<font color="blue">无奈之下，更换了ffmpeg-1.2-win32-dev这个版本之后，问题解决了。</font><font color="red">版本升级伤不起啊，开始还以为编译的时候出了问题，现在的看法是，新版本即使添加FF_DEBUG_MV，但avframe.mb_type还是不会被填充，遇到类似问题需要注意。</font>
 
 最后附上修改过的代码
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 extern "C"{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>

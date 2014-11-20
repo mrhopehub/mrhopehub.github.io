@@ -17,7 +17,7 @@ E    如果const和（或）volatile关键字的后面紧跟类型说明符（�
 F    最终这个到底是定义了数组、指针变量、还是函数原型声明<br><br><br>
 举例：<font color="red">void(\* signal(int signr,void(\* handler)(int)))(int);</font>//linux0.11源码include/signal.h文件第55行<br>
 举例：<br>
-<xmp class="prettyprint linenums">
+<pre class="prettyprint linenums">
 #include <stdio.h>
 int sum(int sum1,int sum2);
 int main()
