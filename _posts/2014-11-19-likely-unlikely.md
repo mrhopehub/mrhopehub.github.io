@@ -20,7 +20,7 @@ likely()与unlikely()在2.6内核中，随处可见，那为什么要用它们�
 \_\_buildin\_expect((x), 1)表示x的值为真的可能性更大.<br>
 \_\_buildin\expect((x), 0)表示x的值为假的可能性更大.<br>
 也就是说，使用likely(),执行if后面的语句的机会更大，使用unlikely(),执行else后面的语句机会更大一些。通过这种方式，编译器在编译过程中，会将可能性更大的代码紧跟着后面的代码，从而减少指令跳转带来的性能上的下降。比如：
-<xmp class="prettyprint linenums">
+<xmp class="prettyprint">
 if(likely(a>b)){
 	fun1();
 }
