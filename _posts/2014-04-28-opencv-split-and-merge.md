@@ -3,7 +3,7 @@ layout: posts
 title: "opencv之通道的分离(split)与合并(merge)"
 ---
 
-#### opencv之通道的分离(split)与合并(merge)
+# {{ page.title }})
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 分离、合并通道
 

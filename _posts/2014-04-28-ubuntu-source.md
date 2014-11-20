@@ -3,7 +3,7 @@ layout: posts
 title: "无法找到软件包 libncurses5-dev 的解决方法"
 ---
 
-# 无法找到软件包 libncurses5-dev 的解决方法
+# {{ page.title }}
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 1	软件源太少
 2	libncurses5-dev	软件名输入错误

@@ -3,7 +3,7 @@ layout: posts
 title: "createTrackbar与printf的比较(与最简单的函数比较，方便记忆)"
 ---
 
-#### createTrackbar与printf的比较(与最简单的函数比较，方便记忆)
+# {{ page.title }}
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 int cvCreateTrackbar(const char*trackbar_name, const char* window_name, int* value, int count,CvTrackbarCallbackon_change=NULL);
 

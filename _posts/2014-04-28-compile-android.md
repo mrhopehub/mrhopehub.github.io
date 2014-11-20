@@ -3,7 +3,7 @@ layout: posts
 title: "ubuntu12.04编译android最新版本"
 ---
 
-# ubuntu12.04编译android最新版本
+# {{ page.title }}
 之所以写这篇文章是因为不一样的android版本编译需要不一样的环境，在阅读官方的教程时，对版本的的主线没把握住，导致有些地方不是很理解，所以在这里说一下环境搭建时与版本相关的几点问题还有环境搭建时遇到的问题<br><br>
 <font color="red">Android版本：最新版本即master分支</font><br><br>
 环境搭建：<br>

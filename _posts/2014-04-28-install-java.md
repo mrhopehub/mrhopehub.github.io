@@ -3,7 +3,7 @@ layout: posts
 title: "ubuntu下JDK安装方法总结"
 ---
 
-# ubuntu下JDK安装方法总结
+# {{ page.title }}
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 .bin安装方法
 1)首先，在Oracle的官网上下载JDK。

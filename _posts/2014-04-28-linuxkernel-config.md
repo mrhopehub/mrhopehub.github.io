@@ -3,7 +3,7 @@ layout: posts
 title: "关于linux编译的Kconfig、makefile、.config文件"
 ---
 
-# 关于linux编译的Kconfig、makefile、.config文件
+# {{ page.title }}
 <xmp style="white-space: pre-wrap; word-wrap: break-word;">
 曾几何时，linux是多么的神秘，多么的高深莫测，区区编译一个内核就搞得摸不到头脑，更别说Kconfig、makefile、.config这些文件。
 
