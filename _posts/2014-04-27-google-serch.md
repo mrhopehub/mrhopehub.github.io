@@ -2,7 +2,7 @@
 layout: posts
 title: "google搜索"
 ---
-## google搜索
+# {{ page.title }}
 1. 概念搜索 pdf ppt
 2. 开源库搜索 如speex
 3. SDK搜索
