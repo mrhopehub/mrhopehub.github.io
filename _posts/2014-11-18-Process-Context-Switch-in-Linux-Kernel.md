@@ -87,9 +87,7 @@ movl %[next_sp],%%esp
 这里，如果之前B也被switch_to出去过，那么[next_ip]里存的就是下面这个1f的标号，但如果进程B刚刚被创建，之前没有被switch_to出去过，那么[next_ip]里存的将是ret_ftom_fork（参看copy_thread()函数）。这就是这里为什么不用call __switch_to而用jmp，因为call会导致自动把下面这句话的地址(也就是1:)压栈，然后__switch_to()就必然只能ret到这里，而无法根据需要ret到ret_from_fork。
 </xmp>
 ## next是否是新进程（没有switch_to过的进程，如fork出的子进程）
-<xmp class="my_xmp_class">
 ### 1.如果next是新进程，虽然
-</xmp>
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
@@ -97,17 +95,14 @@ movl %[next_sp],%%esp
 之后是在next进程上运行，但是并不是next进程（新进程）的真正开始点，而ret_ftom_fork才新进程的开始点。
 </xmp>
 <font color="red" size="3">要注意一句话，当处理器切换到某个进程时，不必是上次切换出去时的下一条指令，也就是说切换到next进程时并不一定要运行ret_ftom_fork，而是要继续做一下切换的后续管理工作（硬件上下文的保存、恢复），之后再跳转到ret_ftom_fork（也就是\_\_switch\_to函数返回）。总结一下就是切换到next进程（堆栈切换）时并没有完成完全的切换工作，需要恢复硬件上下文之后，才是完全的切换了进程。</font>
-<xmp class="my_xmp_class">
 ### 2.如果next进程不是新进程（next进程被switch_to过），虽然
-</xmp>
 <xmp class="prettyprint linenums">
 movl %[next_sp],%%esp
 </xmp>
 <xmp class="my_xmp_class">
 之后是的真正开始点，但是此时硬件上下文还不是next进程的。__switch_to进行硬件上下文恢复之后才算是完全恢复next进程。
-
-### 3.综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。
 </xmp>
+### 3.综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。
 switch_to宏化简一下就是：
 <xmp class="prettyprint linenums">
 	//参照《深入理解linux内核》第三版P111
