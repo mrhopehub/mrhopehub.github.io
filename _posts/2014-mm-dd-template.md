@@ -3,7 +3,11 @@ layout: posts
 title: "eclipse 常用"
 ---
 # {{ page.title }}
+<xmp class="my_xmp_class">
 
+</xmp>
+<xmp class="prettyprint linenums">
+</xmp>
 
 1.缩进<blockquote><blockquote>或者> >> >>>
 2.标题# 文章题目 ## 一级标题1 ### 二级标题1.1 #### 三级标题1.1.1，从二级标题开始缩进
