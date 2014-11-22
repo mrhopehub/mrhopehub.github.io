@@ -5,6 +5,10 @@ title: "Linux中的段"
 # {{ page.title }}
 摘抄：陈莉君 《深入分析Linux内核源代码》
 ## 2.3.7 Linux中的段
+<div align=center>![图2.9](/images/linux中的段/图2.9逻辑—线性地址转换.gif)</div>
+<div align=center>图2.9 逻辑—线性地址转换</div>
+<div align=center>![图2.10](/images/linux中的段/图2.10段描述符的一般格式.gif)</div>
+<div align=center>图2.10 段描述符的一般格式</div>
 <xmp class="my_xmp_class">    Intel微处理器的段机制是从8086开始提出的，那时引入的段机制解决了从CPU内部16位地址到20位实地址的转换。为了保持这种兼容性，386仍然使用段机制，但比以前复杂得多。因此，Linux内核的设计并没有全部采用Intel所提供的段方案，仅仅有限度地使用了一下分段机制。这不仅简化了Linux内核的设计，而且为把Linux移植到其他平台创造了条件，因为很多RISC处理器并不支持段机制。但是，对段机制相关知识的了解是进入Linux内核的必经之路。
 	从2.2版开始，Linux让所有的进程（或叫任务）都使用相同的逻辑地址空间，因此就没有必要使用局部描述符表LDT。但内核中也用到LDT，那只是在VM86模式中运行Wine，因为就是说在Linux上模拟运行Winodws软件或DOS软件的程序时才使用。
 	Linux在启动的过程中设置了段寄存器的值和全局描述符表GDT的内容，段的定义在include/asm-i386/segment.h中：
