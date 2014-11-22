@@ -4,7 +4,6 @@ title: "eclipse 常用"
 ---
 # {{ page.title }}
 <xmp class="my_xmp_class">
-
 </xmp>
 <xmp class="prettyprint linenums">
 </xmp>
