@@ -92,6 +92,7 @@ title: "Linux中的段"
 </xmp>
 ### 2.中断支持
 <xmp class="my_xmp_class">不用多说，主要是IDTR实现，内核配合(把设计好的门描述符添加到中断描述附表中)。
+
 需要注意的是：所有的中断发生时，通过IDTR获得中断门段描述符中的代码段选择符都是__KERNEL_CS，不同的是IP不一样。而系统调用的异常门描述符中的代码段选择符也是__KERNEL_CS，而IP指向system_call，system_call通过不同的参数实现不同的系统调用。
 </xmp>
 ### 3.任务切换
