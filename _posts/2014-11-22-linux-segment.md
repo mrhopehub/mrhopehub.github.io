@@ -97,4 +97,4 @@ title: "Linux中的段"
 ### 3.任务切换
 主要是TR实现<br>
 早期的Linux版本利用80x86体系结构所提供的硬件支持，并通过far jmp指令跳到next进程TSS描述符的选择符来执行进程切换(TSS描述符存在全局描述符表中，TR寄存器存放的是TSS描述符的选择符)。但是2.6之后的版本进程切换并没有使用硬件支持，而是内核自己实现了进程的切换。<br>
-具体参考：[Process-Context-Switch-in-Linux-Kernel](/_posts/2014-11-18-Process-Context-Switch-in-Linux-Kernel.md)
+具体参考：[Process-Context-Switch-in-Linux-Kernel](/_posts/2014-11-18-Process-Context-Switch-in-Linux-Kernel.html)
