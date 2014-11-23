@@ -97,4 +97,7 @@ title: "Linux中的段"
 ### 3.任务切换
 主要是TR实现<br>
 早期的Linux版本利用80x86体系结构所提供的硬件支持，并通过far jmp指令跳到next进程TSS描述符的选择符来执行进程切换(TSS描述符存在全局描述符表中，TR寄存器存放的是TSS描述符的选择符)。但是2.6之后的版本进程切换并没有使用硬件支持，而是内核自己实现了进程的切换。<br>
-具体参考：[Process-Context-Switch-in-Linux-Kernel]({% post_url 2014-11-19-do-while-0 %})
+具体参考：[Process-Context-Switch-in-Linux-Kernel]({% post_url 2014-11-18-Process-Context-Switch-in-Linux-Kernel %})
+### 小结
+<xmp class="my_xmp_class">上面三个方面讨论了处理器与内核的配合，既可以促进对内核的理解，也促进了对处理器寄存器的理解。所以在分析新处理器上的内核代码时，也可以从上面三个方面分析。例如arm处理器，由于arm处理器架构比较灵活，一般说arm寄存器并没有内存管理相关的寄存器，只说7种模式下的16个寄存器，其实arm的内存管理需要协处理器CP15去支持。另外arm处理器的内存管理也没有段机制，直接就是页机制。
+</xmp>
