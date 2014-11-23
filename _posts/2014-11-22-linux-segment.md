@@ -95,7 +95,7 @@ title: "Linux中的段"
 需要注意的是：所有的中断发生时，通过IDTR获得中断门段描述符中的代码段选择符都是__KERNEL_CS，不同的是IP不一样。而系统调用的异常门描述符中的代码段选择符也是__KERNEL_CS，而IP指向system_call，system_call通过不同的参数实现不同的系统调用。
 </xmp>
 ### 3.任务切换
-主要是TR实现<br>
+主要是TR实现<br><br>
 早期的Linux版本利用80x86体系结构所提供的硬件支持，并通过far jmp指令跳到next进程TSS描述符的选择符来执行进程切换(TSS描述符存在全局描述符表中，TR寄存器存放的是TSS描述符的选择符)。但是2.6之后的版本进程切换并没有使用硬件支持，而是内核自己实现了进程的切换。<br>
 具体参考：[Process-Context-Switch-in-Linux-Kernel]({% post_url 2014-11-18-Process-Context-Switch-in-Linux-Kernel %})
 ### 小结
