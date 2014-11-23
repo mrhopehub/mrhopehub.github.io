@@ -68,11 +68,11 @@ title: "Linux中的段"
 <font color="red">这三个方面是要实现多任务的必要条件，另外可以从这三个方面很好的去理解i386的寄存器。</font>
 <xmp class="my_xmp_class">下面列举一下i386/32位处理器的寄存器：
 </xmp>
-<div align=center><img src="/images/linux中的段/图1普通编程处理器.jpg" alt="图1 普通编程处理器"></div>
+<div align=center><img src="/images/linux中的段/普通编程处理器.jpg" alt="普通编程处理器"></div>
 <div align=center>图1 普通编程处理器</div>
-<div align=center><img src="/images/linux中的段/图2内存管理寄存器.jpg" alt="图2 内存管理寄存器"></div>
+<div align=center><img src="/images/linux中的段/内存管理寄存器.jpg" alt="内存管理寄存器"></div>
 <div align=center>图2 内存管理寄存器</div>
-<div align=center><img src="/images/linux中的段/图3控制寄存器.png" alt="图3 控制寄存器"></div>
+<div align=center><img src="/images/linux中的段/控制寄存器.png" alt="控制寄存器"></div>
 <div align=center>图3 控制寄存器</div>
 ### 1.内存管理
 ### 2.中断支持
