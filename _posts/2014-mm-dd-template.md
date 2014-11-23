@@ -15,6 +15,7 @@ title: "eclipse 常用"
 5.代码<xmp class="prettyprint linenums"></xmp>
 6.![向导](/images/markdown语法/mdcheatsheet.png)<br><!--图片，绝对地址-->
 7.图片、图片说明居中<div align=center><img src="/images/" alt=""></div>
+8.站内文章链接[Name of Link]({% post_url 2010-07-21-name-of-post %})
 
 
 HTML默认样式http://unmi.cc/html-tags-default-style-in-browser/
