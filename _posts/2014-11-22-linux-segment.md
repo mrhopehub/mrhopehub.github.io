@@ -60,12 +60,20 @@ title: "Linux中的段"
 <xmp class="my_xmp_class">2.3.7节从分段的角度讨论了处理器与内核之间的配合。下面从更高的角度谈一下处理器与内核的配合实现多任务。计算机系统从最初发展到现在，硬件、软件都在发展着，而且二者的发展有些地方是目的相同的。例如多任务这个方向，内存管理是实现多任务的必要条件，硬件在这方面的发展是MMU去支持内存管理，而软件的发展就是内核去配合MMU，从而才能实现内存管理的虚拟空间、分页。
 </xmp>
 <font color="red">但是有些时候，内核并不用完全配合处理器的机制也能很好的实现多任务，例如内核并没有完全配合i386的分段机制。</font><br>
-<xmp class="my_xmp_class">一下从三个方面讨论处理器(i386)与内核的配合：
+<xmp class="my_xmp_class">一下从三个方面讨论处理器(i386/32位)与内核的配合：
     1.  内存管理
     2.  中断支持
     3.  任务切换
 </xmp>
 <font color="red">这三个方面是要实现多任务的必要条件，另外可以从这三个方面很好的去理解i386的寄存器。</font>
+<xmp class="my_xmp_class">下面列举一下i386/32位处理器的寄存器：
+</xmp>
+<div align=center><img src="/images/linux中的段/图1 普通编程处理器.jpg" alt="图1 普通编程处理器"></div>
+<div align=center>图1 普通编程处理器</div>
+<div align=center><img src="/images/linux中的段/图2 内存管理寄存器.jpg" alt="图2 内存管理寄存器"></div>
+<div align=center>图2 内存管理寄存器</div>
+<div align=center><img src="/images/linux中的段/图3 控制寄存器.png" alt="图3 控制寄存器"></div>
+<div align=center>图3 控制寄存器</div>
 ### 1.内存管理
 ### 2.中断支持
 ### 3.任务切换
