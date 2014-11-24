@@ -25,7 +25,14 @@ title: "Linux中的段"
 
 	全局描述符表的定义在arch/i386/kernel/head.S中：
 </xmp>
-<xmp class="prettyprint linenums">ENTRY(gdt_table)
+<xmp class="prettyprint linenums" id="center_down" style="overflow:auto; height:50; 
+scrollbar-face-color: #f1f1f1; 
+scrollbar-shadow-color: #ffffff; 
+scrollbar-highlight-color:#ffffff; 
+scrollbar-3dlight-color: #ffffff; 
+scrollbar-darkshadow-color: #ffffff; 
+scrollbar-track-color:#DDDDDD; 
+scrollbar-arrow-color: #477ED1">ENTRY(gdt_table)
     .quad 0x0000000000000000	/* NULL descriptor */
 	.quad 0x0000000000000000	/* not used */
 	.quad 0x00cf9a000000ffff	/* 0x10 kernel 4GB code at 0x00000000 */
