@@ -5,7 +5,7 @@ title: "Linux中的段"
 # {{ page.title }}
 摘抄：陈莉君 《深入分析Linux内核源代码》
 ## 2.3.7 Linux中的段
-<div style="overflow:auto; height:50; 
+<div style="overflow:auto; height:20; 
 scrollbar-face-color: #f1f1f1; 
 scrollbar-shadow-color: #ffffff; 
 scrollbar-highlight-color:#ffffff; 
