@@ -25,7 +25,7 @@ title: "Linux中的段"
 
 	全局描述符表的定义在arch/i386/kernel/head.S中：
 </xmp>
-<xmp class="prettyprint linenums" id="center_down" style="overflow:auto; height:50; 
+<xmp class="prettyprint linenums" style="height:20; 
 scrollbar-face-color: #f1f1f1; 
 scrollbar-shadow-color: #ffffff; 
 scrollbar-highlight-color:#ffffff; 
