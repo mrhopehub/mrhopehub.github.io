@@ -15,8 +15,8 @@ These steps are done in context_switch(), switch_to() and __switch_to(). switch_
  
 Here is the source code of switch_to():
 </xmp>
-<xmp class="prettyprint linenums">
-/* 
+<div class="scroll_code">
+<xmp class="prettyprint linenums">/* 
 * Saving eflags is important. It switches not only IOPL between tasks, 
 * it also protects other tasks from NT leaking through sysenter etc. 
 */  
@@ -68,6 +68,7 @@ do {                                    \
             "memory");                    \  
 } while (0)
 </xmp>
+</div>
 <xmp class="my_xmp_class">
 We can see 3 things are done in function switch_to(): 
 	1.switch %esp
