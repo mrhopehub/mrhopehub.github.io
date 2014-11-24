@@ -100,7 +100,7 @@ This piece of code is so excellent and well designed, and the functionalities ar
 </xmp>
 ### 3.综上两条所述，堆栈切换到__switch_to结束虽然是在next进程上运行，但是并不完全算是next进程的开始，__switch_to返回之后才是next进程真真正正恢复。
 switch_to宏化简一下就是：
-<xmp class="prettyprint linenums">//参照《深入理解linux内核》第三版P111
+<xmp class="prettyprint linenums">    //参照《深入理解linux内核》第三版P111
 	movl prev,%eax
 	movl next,%edx
 	pushfl
