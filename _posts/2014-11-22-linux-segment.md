@@ -25,7 +25,7 @@ title: "Linux中的段"
 
 	全局描述符表的定义在arch/i386/kernel/head.S中：
 </xmp>
-<div style="width: 1024px; height: 360px; overflow: scroll">
+<div style="panding: 0 width: 1024px; height: 360px; overflow: scroll">
 <xmp class="prettyprint linenums">ENTRY(gdt_table)
     .quad 0x0000000000000000	/* NULL descriptor */
 	.quad 0x0000000000000000	/* not used */
