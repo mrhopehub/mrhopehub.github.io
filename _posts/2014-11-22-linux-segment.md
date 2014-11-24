@@ -44,6 +44,8 @@ title: "Linux中的段"
 	.quad 0x00009a0000000000	/* 0x50 APM CS 16 code (16 bit) */
 	.quad 0x0040920000000000	/* 0x58 APM DS    data */
 	.fill NR_CPUS*4,8,0		/* space for TSS's and LDT's */
+	.fill NR_CPUS*4,8,0		/* space for TSS's and LDT's */
+	.fill NR_CPUS*4,8,0		/* space for TSS's and LDT's */
 </xmp>
 </div>
 <xmp class="my_xmp_class">    从代码可以看出，GDT放在数组变量gdt_table中。按Intel规定，GDT中的第一项为空，这是为了防止加电后段寄存器未经初始化就进入保护模式而使用GDT的。第二项也没用。从下标2到5共4项对应于前面的4种段描述符值。对照图2.10，从描述符的数值可以得出：
