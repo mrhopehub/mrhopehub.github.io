@@ -35,7 +35,7 @@
 xmp.prettyprint { padding: 0 0 0 0; border: 2px solid #00FF00; margin: 0 0 0 0 }
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums { padding: 0 0 0 0; border: 0 none #000000; margin: 0 0 0 0 } /* IE indents via margin-left */
+ol.linenums { padding: margin: 0 0 0 0 } /* IE indents via margin-left */
 li.L0,
 li.L1,
 li.L2,
