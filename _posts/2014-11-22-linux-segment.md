@@ -5,16 +5,6 @@ title: "Linux中的段"
 # {{ page.title }}
 摘抄：陈莉君 《深入分析Linux内核源代码》
 ## 2.3.7 Linux中的段
-<div style="overflow:auto; height:20; 
-scrollbar-face-color: #f1f1f1; 
-scrollbar-shadow-color: #ffffff; 
-scrollbar-highlight-color:#ffffff; 
-scrollbar-3dlight-color: #ffffff; 
-scrollbar-darkshadow-color: #ffffff; 
-scrollbar-track-color:#DDDDDD; 
-scrollbar-arrow-color: #477ED1"> 
-<img src="/images/linux中的段/图2.9逻辑—线性地址转换.gif" alt="图2.9">
-</div>
 <div align=center><img src="/images/linux中的段/图2.9逻辑—线性地址转换.gif" alt="图2.9"></div>
 <div align=center>图2.9 逻辑—线性地址转换</div>
 <div align=center><img src="/images/linux中的段/图2.10段描述符的一般格式.gif" alt="图2.10"></div>
