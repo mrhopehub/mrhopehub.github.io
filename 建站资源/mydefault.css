@@ -1,41 +1,28 @@
 /* Pretty printing styles. Used with prettify.js. */
 
-/* SPAN elements with the classes below are added by prettyprint. */
-.pln { color: #000 }  /* plain text */
-
 @media screen {
-  .str { color: #080 }  /* string content */
-  .kwd { color: #008 }  /* a keyword */
-  .com { color: #800 }  /* a comment */
-  .typ { color: #606 }  /* a type name */
-  .lit { color: #066 }  /* a literal value */
-  /* punctuation, lisp open bracket, lisp close bracket */
-  .pun, .opn, .clo { color: #660 }
-  .tag { color: #008 }  /* a markup tag name */
-  .atn { color: #606 }  /* a markup attribute name */
-  .atv { color: #080 }  /* a markup attribute value */
-  .dec, .var { color: #606 }  /* a declaration; a variable name */
-  .fun { color: red }  /* a function name */
-}
-
-/* Use higher contrast and text-weight for printable form. */
-@media print, projection {
-  .str { color: #060 }
-  .kwd { color: #006; font-weight: bold }
-  .com { color: #600; font-style: italic }
-  .typ { color: #404; font-weight: bold }
-  .lit { color: #044 }
-  .pun, .opn, .clo { color: #440 }
-  .tag { color: #006; font-weight: bold }
-  .atn { color: #404 }
-  .atv { color: #060 }
+  .com { color: #93a1a1; }
+  .lit { color: #AE81FF; }
+  .pun,
+  .opn, 
+  .clo { color: #F8F8F2; }
+  .fun { color: #dc322f; }
+  .str, 
+  .atv { color: #E6DB74; }
+  .kwd, 
+  .tag { color: #F92659; }
+  .typ, 
+  .atn, 
+  .dec, 
+  .var { color: #A6E22E; }
+  .pln { color: #66D9EF; }
 }
 
 /* Put a border around prettyprinted code snippets. */
-xmp.prettyprint { border-radius:10px; display: block; background-color:rgb(204,232,207); padding: 0 0 0 0; border: 2px solid #00FF00; margin: 0 0 0 0 }
+xmp.prettyprint { border-radius:10px; display: block; background-color:#272822; padding: 0 0 0 0; border: 2px solid #272822; margin: 0 0 0 0 }
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin: 0 0 0 0 } /* IE indents via margin-left */
+ol.linenums { width: 0; color: #bebec5; background-color: #39382E; margin: 0 0 0 0 } /* IE indents via margin-left */
 li.L0,
 li.L1,
 li.L2,
