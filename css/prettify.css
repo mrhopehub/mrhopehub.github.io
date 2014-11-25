@@ -32,7 +32,7 @@
 }
 
 /* Put a border around prettyprinted code snippets. */
-xmp.prettyprint { border-radius:10px; display: block; background-color:rgb(204,232,207); padding: 0 0 0 0; border: 2px solid #00FF00; margin: 0 0 0 0 }
+xmp.prettyprint { border-radius:10px; display: block; background-color:rgb(204,232,207); padding: 0 0 0 0; border: 2px solid #AEAEAE; margin: 0 0 0 0 }
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums { margin: 0 0 0 0 } /* IE indents via margin-left */
