@@ -6,7 +6,8 @@
 
      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
      <title>{{ page.title }}</title>
-	 <link rel="stylesheet" href="/css/prettify.css">
+	 <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+	 <script type="text/javascript" src="/css/prettify.js"></script>
 
     <style type="text/css">
 	h2 { color: blue }
@@ -67,7 +68,7 @@
   
     <div style="position: fixed; display: block;">
         <img class="img-nav"src="/images/img-nav.jpg">
-        <a href="/index.html" class="button">列表</a>
+        <a href="/index.html" class="button">返回列表</a>
         <a href="{{ BASE_PATH }}{{ page.previous.url }}" class="button">上一篇</a>
         <a href="{{ BASE_PATH }}{{ page.next.url }}" class="button">下一篇</a>
     </div>
@@ -75,7 +76,6 @@
  <div style="width: 1024px; margin-left:265px;display: block;">
   {{ content }}
   </div>
-  <script type="text/javascript" src="/css/prettify.js"></script>
   </body>
 
 </html>
