@@ -13,13 +13,14 @@ title: "Linux中的段"
 	从2.2版开始，Linux让所有的进程（或叫任务）都使用相同的逻辑地址空间，因此就没有必要使用局部描述符表LDT。但内核中也用到LDT，那只是在VM86模式中运行Wine，因为就是说在Linux上模拟运行Winodws软件或DOS软件的程序时才使用。
 	Linux在启动的过程中设置了段寄存器的值和全局描述符表GDT的内容，段的定义在include/asm-i386/segment.h中：
 </xmp>
-<xmp class="prettyprint linenums">#define __KERNEL_CS     0x10    ／＊内核代码段, index=2,TI=0,RPL=0＊／
+<xmp class="prettyprint linenums">#define __KERNEL_CS     0x10    /* 内核代码段, index=2,TI=0,RPL=0 */
 
-#define __KERNEL_DS     0x18    ／＊内核数据段, index=3,TI=0,RPL=0＊／
+#define __KERNEL_DS     0x18    /* 内核数据段, index=3,TI=0,RPL=0 */
 
-#define __USER_CS       0x23    ／＊用户代码段, index=4,TI=0,RPL=3＊／
+#define __USER_CS       0x23    /* 用户代码段, index=4,TI=0,RPL=3 */
 
-#define __USER_DS       0x2B    ／＊用户数据段, index=5,TI=0,RPL=3＊／
+#define __USER_DS       0x2B    /* 用户数据段, index=5,TI=0,RPL=3 */
+
 </xmp>
 <xmp class="my_xmp_class">    从定义看出，没有定义堆栈段，实际上，Linux内核不区分数据段和堆栈段，这也体现了Linux内核尽量减少段的使用。因为没有使用LDT，因此，TI=0,并把这4个段都放在GDT中, index就是某个段在GDT表中的下标。内核代码段和数据段具有最高特权，因此其RPL为0，而用户代码段和数据段具有最低特权，因此其RPL为3。可以看出，Linux内核再次简化了特权级的使用，使用了两个特权级而不是4个。
 
