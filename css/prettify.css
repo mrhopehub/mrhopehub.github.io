@@ -22,7 +22,7 @@
 xmp.prettyprint { border-radius:10px; display: block; background-color:#272822; padding: 0 0 0 0; border: 2px solid #272822; margin: 0 0 0 0 }
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums { width: 0; color: #bebec5; background-color: #39382E; margin: 0 0 0 0 } /* IE indents via margin-left */
+ol.linenums { width: auto; color: #bebec5; background-color: #39382E; margin: 0 0 0 0 } /* IE indents via margin-left */
 li.L0,
 li.L1,
 li.L2,
