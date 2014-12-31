@@ -52,7 +52,7 @@ screen /dev/ttyUSB0 115200
 ## 8. 测试uboot，USB转TTL插入，虚拟机设置共享USB
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-uboot
 ./uart</xmp>
-USB转TTL插入正确连接cubietruck，把SD卡插入cubietruck，上电启动，接收信息
+<font style="color: red; font-size: 16px;">不要关闭该窗口，一直作为调试窗口，编译、写SD卡另外打开一个虚拟终端。</font>USB转TTL插入正确连接cubietruck，把SD卡插入cubietruck，上电启动，接收信息
 <xmp class="prettyprint linenums">U-Boot SPL 2014.04-10733-gea1ac32 (Dec 31 2014 - 13:35:03)
 Board: Cubietruck
 DRAM: 2048 MiB
