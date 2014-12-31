@@ -3,9 +3,12 @@ layout: posts
 title: "virtualbox虚拟机下ubuntu10.04建立cubietruck开发环境"
 ---
 # {{ page.title }}
-## 1. <font style="color: red; font-size: 14px;">Windows下:</font>PL2303USB转TTL串口驱动安装，<font style="color: red; font-size: 14px;">安装驱动前需要把任何PL2303设备拔掉，</font>然后运行PL2303_Prolific_DriverInstaller_v1_9_0目录下的PL2303_Prolific_DriverInstaller_v1.9.0.exe安装驱动。最后插入PL2303USB转TTL，windows自动完成驱动查找、安装。
-## 2. <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
-## 3. <font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="my_xmp_class">sudo add-apt-repository ppa:linaro-maintainers/toolchain
+## 1. PL2303驱动安装
+<font style="color: red; font-size: 14px;">Windows下:</font>PL2303USB转TTL串口驱动安装，<font style="color: red; font-size: 14px;">安装驱动前需要把任何PL2303设备拔掉，</font>然后运行PL2303_Prolific_DriverInstaller_v1_9_0目录下的PL2303_Prolific_DriverInstaller_v1.9.0.exe安装驱动。最后插入PL2303USB转TTL，windows自动完成驱动查找、安装。
+## 2. 虚拟机USB共享驱动安装
+<font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
+## 3. 工具链安装
+<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="my_xmp_class">sudo add-apt-repository ppa:linaro-maintainers/toolchain
 sudo apt-get update
 sudo apt-get install gcc-arm-linux-gnueabi</xmp>
 ## 4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
