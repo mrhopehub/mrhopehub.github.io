@@ -3,18 +3,18 @@ layout: posts
 title: "virtualbox虚拟机下ubuntu10.04建立cubietruck开发环境"
 ---
 # {{ page.title }}
-1. <font style="color: red; font-size: 14px;">Windows下:</font>PL2303USB转TTL串口驱动安装，<font style="color: red; font-size: 14px;">安装驱动前需要把任何PL2303设备拔掉，</font>然后运行PL2303_Prolific_DriverInstaller_v1_9_0目录下的PL2303_Prolific_DriverInstaller_v1.9.0.exe安装驱动。最后插入PL2303USB转TTL，windows自动完成驱动查找、安装。
-2. <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
-3. <font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="my_xmp_class">sudo add-apt-repository ppa:linaro-maintainers/toolchain
+## 1. <font style="color: red; font-size: 14px;">Windows下:</font>PL2303USB转TTL串口驱动安装，<font style="color: red; font-size: 14px;">安装驱动前需要把任何PL2303设备拔掉，</font>然后运行PL2303_Prolific_DriverInstaller_v1_9_0目录下的PL2303_Prolific_DriverInstaller_v1.9.0.exe安装驱动。最后插入PL2303USB转TTL，windows自动完成驱动查找、安装。
+## 2. <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
+## 3. <font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="my_xmp_class">sudo add-apt-repository ppa:linaro-maintainers/toolchain
 sudo apt-get update
 sudo apt-get install gcc-arm-linux-gnueabi</xmp>
-4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
-<xmp class="my_xmp_class">sudo apt-get install git-core
+## 4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
+<xmp class="prettyprint linenums">sudo apt-get install git-core
 cd $HOME
 mkdir cubietruck-uboot
 cd cubietruck-uboot
 git clone https://github.com/linux-sunxi/u-boot-sunxi.git</xmp>
-5. 为了方便编译、写入SD卡、串口调试，笔者使用了三个相应的脚本(cubietruck-uboot目录下)
+## 5. 为了方便编译、写入SD卡、串口调试，笔者使用了三个相应的脚本(cubietruck-uboot目录下)
 make脚本
 <xmp class="prettyprint linenums">#! /bin/sh
 
@@ -39,14 +39,14 @@ uart脚本
 screen /dev/ttyUSB0 115200
 </xmp>
 <font style="color: red; font-size: 14px;">不要忘了chmod +x</font>
-6. 编译uboot
+## 6. 编译uboot
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-uboot
 ./make</xmp>
-7. 烧写到SD卡，插入SD卡，虚拟机设置共享USB
+## 7. 烧写到SD卡，插入SD卡，虚拟机设置共享USB
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-uboot
 ./writesdcard</xmp>
 <font style="color: red; font-size: 14px;">ubuntu中安全移除SD卡，然后拔出SD卡</font>
-8. 测试uboot，USB转TTL插入，虚拟机设置共享USB
+## 8. 测试uboot，USB转TTL插入，虚拟机设置共享USB
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-uboot
 ./uart</xmp>
 USB转TTL插入正确连接cubietruck，把SD卡插入cubietruck，上电启动，接收信息
