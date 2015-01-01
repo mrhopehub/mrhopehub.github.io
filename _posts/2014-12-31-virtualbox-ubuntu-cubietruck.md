@@ -8,7 +8,7 @@ title: "virtualbox虚拟机下ubuntu10.04建立cubietruck开发环境"
 ## 2. 虚拟机USB共享驱动安装
 <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
 ## 3. 工具链安装
-<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="my_xmp_class">sudo add-apt-repository ppa:linaro-maintainers/toolchain
+<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="prettyprint linenums">sudo add-apt-repository ppa:linaro-maintainers/toolchain
 sudo apt-get update
 sudo apt-get install gcc-arm-linux-gnueabi</xmp>
 ## 4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
