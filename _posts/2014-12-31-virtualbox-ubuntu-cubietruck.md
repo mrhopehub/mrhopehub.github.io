@@ -34,8 +34,7 @@ export p=""
 sudo dd if=/dev/zero of=${card} bs=1k count=1023 seek=1
 
 #Bootloader
-sudo dd if=u-boot-sunxi/spl/sunxi-spl.bin of=${card} bs=1024 seek=8
-sudo dd if=u-boot-sunxi/u-boot.img of=${card} bs=1024 seek=40</xmp>
+sudo dd if=u-boot-sunxi/u-boot-sunxi-with-spl.bin of=${card} bs=1024 seek=8</xmp>
 uart脚本
 <xmp class="prettyprint linenums">#! /bin/sh
 
