@@ -121,7 +121,7 @@ sudo cp -rv binary/* /mnt
 sudo umount ${card}${p}2</xmp>
 ## 测试
 插入sd卡，连接TTL，一下是串口打印信息
-<xmp class="prettyprint linenums">
+<xmp class="my_xmp_class">
 U-Boot SPL 2014.04-10733-gea1ac32-dirty (Jan 03 2015 - 17:09:46)
 Board: Cubietruck
 DRAM: 2048 MiB
