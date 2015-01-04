@@ -46,10 +46,10 @@ git clone git://github.com/linux-sunxi/sunxi-tools.git</xmp>
 make CROSS_COMPILE=arm-linux-gnueabi- Cubietruck_config
 make CROSS_COMPILE=arm-linux-gnueabi-</xmp>
 ## 编译内核
-<xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-kernel
-export PATH=$HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi/tools:$PATH
-cp cubie_configs/kernel-configs/3.4/cubietruck_defconfig linux-sunxi/.config
-cd linux-sunxi
+<xmp class="prettyprint linenums">export PATH=$HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi/tools:$PATH
+cd $HOME/cubietruck-build/cubietruck-kernel/linux-sunxi
+rm -rv .config
+cp ../cubie_configs/kernel-configs/3.4/cubietruck_defconfig .config
 make ARCH=arm menuconfig
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage modules</xmp>
 ## 编译sunxi-tools
