@@ -48,6 +48,7 @@ make CROSS_COMPILE=arm-linux-gnueabi-</xmp>
 ## 编译内核
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-kernel
 export PATH=$HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi/tools:$PATH
+rm -rv linux-sunxi/.config
 cp cubie_configs/kernel-configs/3.4/cubietruck_defconfig linux-sunxi/.config
 cd linux-sunxi
 make ARCH=arm menuconfig
