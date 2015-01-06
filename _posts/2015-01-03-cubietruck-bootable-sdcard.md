@@ -78,8 +78,8 @@ mkimage -C none -A arm -T script -d boot.cmd boot.scr</xmp>
 ## uEnv.txt
 在$HOME/cubietruck-build/cubietruck-kernel/目录下新建uEnv.txt，这个文件的作用是存放uboot的环境变量，这里暂时不添加任何内容。
 ## 制作根文件系统
-这里并没有自己编译根文件系统，而是下载别人制作好的根文件系统。可以到[https://snapshots.linaro.org/ubuntu/images](https://snapshots.linaro.org/ubuntu/images)下载，这里选择https://snapshots.linaro.org/ubuntu/images/developer/latest的最新版本为linaro-utopic-developer-20141212-693.tar.gz，下载好之后放在$HOME/cubietruck-build/cubietruck-sdcard目录下，用以下命令解压
-<xmp class="prettyprint linenums">export ROOTFS_TARBALL=linaro-utopic-developer-20141212-693.tar.gz
+这里并没有自己编译根文件系统，而是下载别人制作好的根文件系统。可以到[https://releases.linaro.org](https://releases.linaro.org)下载，这里选择https://releases.linaro.org/13.04/ubuntu/quantal-images/developer/linaro-quantal-developer-20130422-342.tar.gz。下载好之后放在$HOME/cubietruck-build/cubietruck-sdcard目录下，用以下命令解压
+<xmp class="prettyprint linenums">export ROOTFS_TARBALL=linaro-quantal-developer-20130422-342.tar.gz
 cd $HOME/cubietruck-build/cubietruck-sdcard
 sudo rm -rv binary/
 sudo tar -zxvf ${ROOTFS_TARBALL}</xmp>
