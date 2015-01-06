@@ -11,18 +11,21 @@ mkdir cubietruck-uboot
 mkdir cubietruck-kernel
 mkdir cubietruck-sdcard</xmp>
 cubietruck-build为总目录，cubietruck-uboot用于编译uboot，cubietruck-kernel用于编译内核，cubietruck-sdcard用于将编译结果、根文件系统写入SD卡。
-## 安装工具链
+## 工具链安装
+<xmp class="my_xmp_class">工具链安装，https://releases.linaro.org/13.04/components/toolchain/binaries选择gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2下载到$HOME目录下。profile文件最后添加一行：
+export PATH=/opt/gcc-linaro-arm-linux-gnueabihf/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin:$PATH</xmp><xmp class="prettyprint linenums">sudo mkdir /opt/gcc-linaro-arm-linux-gnueabihf
+sudo tar -xjvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2 -C /opt/gcc-linaro-arm-linux-gnueabihf/
+sudo gedit /etc/profile
+source /etc/profile</xmp>
+## 其他工具、开发库安装
 <xmp class="prettyprint linenums">sudo apt-get install git-core
-sudo add-apt-repository ppa:linaro-maintainers/toolchain
-sudo apt-get update
-sudo apt-get install gcc-arm-linux-gnueabi
 
 sudo apt-get install libncurses5-dev
 
 sudo apt-get install libusb-1.0-0-dev
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 sudo pkg-config libusb-1.0 --cflags --libs</xmp>
-gcc-arm-linux-gnueabi为交叉编译工具，libncurses5-dev为menuconfig需要的库，libusb-1.0-0-dev为编译bin2fex、fex2bin需要的库
+libncurses5-dev为menuconfig需要的库，libusb-1.0-0-dev为编译bin2fex、fex2bin需要的库
 ## 获取源码
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-uboot
 git clone https://github.com/linux-sunxi/u-boot-sunxi.git
@@ -33,7 +36,7 @@ git clone git://github.com/linux-sunxi/sunxi-tools.git</xmp>
 ## 编译Uboot
 修改$HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi/include/configs/sunxi-common.h文件，去掉以下两块代码
 <xmp class="prettyprint linenums">      "fatload $device $partition $scriptaddr ${bootscr}" \
-	  " || " \
+      " || " \
 	  "ext2load $device $partition $scriptaddr boot/${bootscr}" \
 	  " ||" \</xmp>
 第二块
@@ -43,15 +46,15 @@ git clone git://github.com/linux-sunxi/sunxi-tools.git</xmp>
 	  " || " \</xmp>
 开始编译
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi
-make CROSS_COMPILE=arm-linux-gnueabi- Cubietruck_config
-make CROSS_COMPILE=arm-linux-gnueabi-</xmp>
+make CROSS_COMPILE=arm-linux-gnueabihf- Cubietruck_config
+make CROSS_COMPILE=arm-linux-gnueabihf-</xmp>
 ## 编译内核
 <xmp class="prettyprint linenums">export PATH=$HOME/cubietruck-build/cubietruck-uboot/u-boot-sunxi/tools:$PATH
 cd $HOME/cubietruck-build/cubietruck-kernel/linux-sunxi
 rm -rv .config
 cp ../cubie_configs/kernel-configs/3.4/cubietruck_defconfig .config
 make ARCH=arm menuconfig
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage modules</xmp>
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage modules</xmp>
 ## 编译sunxi-tools
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-kernel/sunxi-tools
 make</xmp>
