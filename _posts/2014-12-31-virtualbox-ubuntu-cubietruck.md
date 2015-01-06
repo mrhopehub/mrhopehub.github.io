@@ -8,10 +8,9 @@ title: "virtualbox虚拟机下ubuntu10.04建立cubietruck开发环境"
 ## 2. 虚拟机USB共享驱动安装
 <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
 ## 3. 工具链安装
-<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装，https://releases.linaro.org/13.04/components/toolchain/binaries选择gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2下载到$HOME目录下<xmp class="prettyprint linenums">sudo mkdir /opt/gcc-linaro-arm-linux-gnueabihf
+<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装，https://releases.linaro.org/13.04/components/toolchain/binaries选择gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2下载到$HOME目录下,profile文件最后添加一行：
+export PATH=/opt/gcc-linaro-arm-linux-gnueabihf/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin:$PATH<xmp class="prettyprint linenums">sudo mkdir /opt/gcc-linaro-arm-linux-gnueabihf
 sudo tar -xjvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2 -C /opt/gcc-linaro-arm-linux-gnueabihf/
-#profile文件最后添加一行：
-#export PATH=/opt/gcc-linaro-arm-linux-gnueabihf/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin:$PATH
 sudo gedit /etc/profile
 source /etc/profile</xmp>
 ## 4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
