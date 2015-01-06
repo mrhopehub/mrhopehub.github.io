@@ -8,9 +8,12 @@ title: "virtualbox虚拟机下ubuntu10.04建立cubietruck开发环境"
 ## 2. 虚拟机USB共享驱动安装
 <font style="color: red; font-size: 14px;">插入U盘、USB转串口，虚拟设置共享U盘、USB转串口</font>
 ## 3. 工具链安装
-<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装<xmp class="prettyprint linenums">sudo add-apt-repository ppa:linaro-maintainers/toolchain
-sudo apt-get update
-sudo apt-get install gcc-arm-linux-gnueabi</xmp>
+<font style="color: red; font-size: 14px;">Ubuntu</font>工具链安装，https://releases.linaro.org/13.04/components/toolchain/binaries选择gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2下载到$HOME目录下<xmp class="prettyprint linenums">sudo mkdir /opt/gcc-linaro-arm-linux-gnueabihf
+sudo tar -xjvf gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux.tar.bz2 -C /opt/gcc-linaro-arm-linux-gnueabihf/
+#profile文件最后添加一行：
+#export PATH=/opt/gcc-linaro-arm-linux-gnueabihf/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux/bin:$PATH
+sudo gedit /etc/profile
+source /etc/profile</xmp>
 ## 4. 安装git、下载uboot源码到$HOME/cubietruck-uboot目录
 <xmp class="prettyprint linenums">sudo apt-get install git-core
 cd $HOME
@@ -22,8 +25,8 @@ make脚本
 <xmp class="prettyprint linenums">#! /bin/sh
 
 cd u-boot-sunxi
-make CROSS_COMPILE=arm-linux-gnueabi- Cubietruck_config
-make CROSS_COMPILE=arm-linux-gnueabi-</xmp>
+make CROSS_COMPILE=arm-linux-gnueabihf- Cubietruck_config
+make CROSS_COMPILE=arm-linux-gnueabihf-</xmp>
 writesdcard脚本
 <xmp class="prettyprint linenums">#! /bin/sh
 
