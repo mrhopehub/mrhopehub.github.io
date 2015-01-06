@@ -23,7 +23,7 @@ make ARCH=arm menuconfig</xmp>
 2.SUNXI Nandflash Driver
 3.sunxi nand partition table support</xmp>
 ## 编译内核
-<xmp class="prettyprint linenums">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage modules</xmp>
+<xmp class="prettyprint linenums">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage modules</xmp>
 但是会有如下结果
 <xmp class="prettyprint linenums">Image Name:   Linux-3.4.103+
 Created:      Sun Jan  4 15:18:37 2015
