@@ -5,7 +5,7 @@ title: "virtualbox搭建ubuntu10.04环境"
 # {{ page.title }}
 准备软件：VirtualBox.exe、ubuntu-10.04-desktop-i386.iso
 ## 安装VirtualBox
-建议到[https://www.virtualbox.org/wiki/Download_Old_Builds](https://www.virtualbox.org/wiki/Download_Old_Builds)下载VirtualBox 4.3.6，<font style="color: red; font-size: 14px;">笔者下载了五六个版本安装之后，新建虚拟机成功，总是在启动虚拟机的时候提示各种各样的错误，所以这里指定一下版本。</font>
+建议到[https://www.virtualbox.org/wiki/Download_Old_Builds](https://www.virtualbox.org/wiki/Download_Old_Builds)下载VirtualBox 4.3.0，<font style="color: red; font-size: 14px;">笔者下载了五六个版本安装之后，新建虚拟机成功，总是在启动虚拟机的时候提示各种各样的错误，所以这里指定一下版本。</font>
 ## 新建虚拟机、配置虚拟机
 1. 新建虚拟机选择linux类的Ubuntu、内存1024MB、磁盘50GB、动态增长
 2. 设置虚拟机网络连接方式为桥接网卡
