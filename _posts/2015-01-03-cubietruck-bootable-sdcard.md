@@ -59,9 +59,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage modules</xmp>
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-kernel/sunxi-tools
 make</xmp>
 ## 构建script.bin
-复制$HOME/cubietruck-build/cubietruck-kernel/cubie_configs/sysconfig/linux/目录下的cubietruck.fex到$HOME/cubietruck-build/cubietruck-kernel，修改screen0_output_type为4（VGA显示），还需要添加以下项
-<xmp class="prettyprint linenums">[dynamic]
-MAC = "028A0AC2353E"</xmp>
+复制$HOME/cubietruck-build/cubietruck-kernel/cubie_configs/sysconfig/linux/目录下的cubietruck.fex到$HOME/cubietruck-build/cubietruck-kernel，修改screen0_output_type为4（VGA显示）。
 构建script.bin
 <xmp class="prettyprint linenums">cd $HOME/cubietruck-build/cubietruck-kernel
 rm script.bin
