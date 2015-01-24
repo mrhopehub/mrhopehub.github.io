@@ -3,6 +3,10 @@ layout: posts
 title: "linux命令行"
 ---
 # {{ page.title }}
+## linux命令行文件操作通配符
+<xmp class="my_xmp_class">与正则表达式的主要区别：
+1.[]、[!]
+2.*并不表示*前面字符的重复，而是包括0长度的任意字符串</xmp>
 ## 虚拟终端与tty
 <xmp class="my_xmp_class">Ctrl+Alt+t：打开虚拟终端
 Ctrl+Alt+(F1、F2、、F6)：进入tty界面</xmp>
