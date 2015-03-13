@@ -12,6 +12,7 @@ apt-get install linux-source-3.11.0
 cd /usr/src
 tar -jxvf linux-source-3.11.0.tar.bz2
 ln -s linux-source-3.11.0 linux</xmp>
+<font style="color: red; font-size: 14px;">linux-source-3.11.0.tar.bz2只是一个符号文件，连接到linux-source-3.11.0目录下的linux-source-3.11.0.tar.bz2。</font>
 ## 3.配置内核
 <xmp class="prettyprint linenums">cp linux-headers-3.11.0-26-generic/.config linux/.config</xmp>
 ## 4.编译内核、模块
