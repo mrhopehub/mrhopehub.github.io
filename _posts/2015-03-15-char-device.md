@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "eclipse 常用"
+title: "简陋字符驱动"
 ---
 # {{ page.title }}
 ## ubuntu版本号13.10，接着上一篇hello module。
