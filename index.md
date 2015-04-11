@@ -3,6 +3,7 @@ layout: index
 title: general code is good code
 ---
 # {{ page.title }}
+[Lofter](http://mrhopehub.lofter.com/)
 ## 文章列表
 
 <ul>
