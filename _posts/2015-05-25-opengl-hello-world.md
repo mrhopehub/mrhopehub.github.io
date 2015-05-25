@@ -119,3 +119,32 @@ void myReshape(int w, int h)
 	glLoadIdentity();
 }
 </xmp>
+
+## 关于glutReshapeFunc(myReshape);
+<xmp class="my_xmp_class">若去掉reshape函数，即把reshape中的函数放进init中，则myDisplay并不能正常工作。
+但是像下面的初始化，则myDisplay能正常工作。</xmp>
+<xmp class="prettyprint linenums">#include "glut.h"
+void myDisplay(void)
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glRectf(-0.5f, -0.5f, 0.5f, 0.5f);
+	glFlush();
+}
+int main(int argc, char *argv[])
+{
+	glutInit(&argc, argv);
+	glutCreateWindow("第一个OpenGL程序");
+	glutDisplayFunc(&myDisplay);
+	glutMainLoop();
+}</xmp>
+## 设置裁剪范围
+<xmp class="prettyprint linenums">	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(CLIP_LEFT, CLIP_RIGHT, CLIP_BOTTOM, CLIP_TOP, CLIP_ZNEAR, CLIP_ZFAR);</xmp>
+<xmp class="my_xmp_class">这是一个整体代码段，单独的glOrtho(CLIP_LEFT, CLIP_RIGHT, CLIP_BOTTOM, CLIP_TOP, CLIP_ZNEAR, CLIP_ZFAR)并没有意义，也不会起作用</xmp>
+## 关于glRasterPos2d(0, 0);
+<xmp class="my_xmp_class">该函数指定的当前位置，并不是最终的光栅坐标，而是跟glVertex2i类似，是世界坐标系，所以glColor3f(1.0, 0.0, 0.0)等等还会起作用。</xmp>
+## 关于glClear(GL_COLOR_BUFFER_BIT);
+<xmp class="my_xmp_class">该程式会清除整个窗口，而不是当前的视口。</xmp>
+## 关于glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+<xmp class="my_xmp_class">（0,0）是窗口的左下角。而不是世界坐标系的原点。</xmp>
