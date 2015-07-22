@@ -20,11 +20,15 @@ title: "一次不愉快的GITHUB经历"
 <xmp class="prettyprint linenums">
 ssh-keygen -t rsa -C "your_email@youremail.com"
 </xmp>
+其实也可以输入，笔者测试的ssh-keygen默认的就是产生rsa密钥对。
+<xmp class="prettyprint linenums">
+ssh-keygen
+</xmp>
 -t是type选项多缩写，-C是comment的缩写，后面的your_email@youremail.com改为你的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key。为了验证是否成功，在git bash下输入：
 <xmp class="prettyprint linenums">
 ssh -T git@github.com
 </xmp>
-如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。<br>
+如果是第一次的会提示是否continue，<font color="red">输入yes(一定要输入yes)</font>就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。<br>
 <font color="red">注意是打开git-bash.bat，而不是windows的运行窗口（git ssh-keygen会提示git没有这个选项），</font><br>
 2. 设置用户名、邮箱<br>
 <xmp class="prettyprint linenums">
