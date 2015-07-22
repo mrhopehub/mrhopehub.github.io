@@ -17,8 +17,7 @@ title: "一次不愉快的GITHUB经历"
 <blockquote>
 1. 产生密钥并测试<br>
 打开C:\PortableGit-1.9.0-preview20140217目录下git-bash.bat，
-<xmp class="prettyprint linenums">
-ssh-keygen -t rsa -C "your_email@youremail.com"
+<xmp class="prettyprint linenums">ssh-keygen -t rsa -C "your_email@youremail.com"
 </xmp>
 其实也可以输入，笔者测试的ssh-keygen默认的就是产生rsa密钥对。
 <xmp class="prettyprint linenums">ssh-keygen
